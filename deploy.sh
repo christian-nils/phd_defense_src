@@ -17,7 +17,7 @@ git add -A
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git remote add origin https://github.com/christian-nils/presentation_template.git
+git remote add origin https://github.com/christian-nils/phd_defense.git
 git push -f origin master
 
 cd -

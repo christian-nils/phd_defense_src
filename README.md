@@ -8,10 +8,10 @@ The structure of this template was based on the presentation slides created by [
 
 The VueJS app uses the following VueJS components and modules:
 
-* [vue-burger-menu](https://vue-burger-menu.netlify.com/), a custom component is included in this presentation template so it automatically list the slides name retrieved from the file `store.js`.
-* [vue-svg-loader](https://vue-svg-loader.js.org/), with the properties `cleanupIDs` and `removeUnknownsAndDefaults`set to `false` in `vue.config.js`.
-* [vue-router](https://router.vuejs.org/).
-* [vuex](https://vuex.vuejs.org/)
+- [vue-burger-menu](https://vue-burger-menu.netlify.com/), a custom component is included in this presentation template so it automatically list the slides name retrieved from the file `store.js`.
+- [vue-svg-loader](https://vue-svg-loader.js.org/), with the properties `cleanupIDs` and `removeUnknownsAndDefaults`set to `false` in `vue.config.js`.
+- [vue-router](https://router.vuejs.org/).
+- [vuex](https://vuex.vuejs.org/)
 
 Note (maybe it sounds unnecessary for most of you): When defining static data such as GSAP timelines for animations, you should use `this.$options` to store your [static data](https://stackoverflow.com/questions/45814507/how-to-set-a-component-non-reactive-data-in-vue-2) in your component (i.e., slide).
 
@@ -23,44 +23,59 @@ Note (maybe it sounds unnecessary for most of you): When defining static data su
 ```
 chmod +x deploy.sh
 ```
+
 3. Create your slides, namely create one `vue` file per slide, and reference them in `store.js`. You can change the following options:
 
-    * `name`: component name
-    * `menuName`: slide name displayed on the menu
-    * `path`: displayed path by the vue-router
-    * `steps`: [optional] number of steps the slide as
-    * `enterNext`, `enterPrev`, `leaveNext`, `leavePrev`: [optional] transition effects (see EagleJS doc)
-    
-        or
-    
-    * `enter`, `leave`: [optional] (see EagleJS doc)
+   - `name`: component name
+   - `menuName`: slide name displayed on the menu
+   - `path`: displayed path by the vue-router
+   - `steps`: [optional] number of steps the slide as
+   - `enterNext`, `enterPrev`, `leaveNext`, `leavePrev`: [optional] transition effects (see EagleJS doc)
+
+     or
+
+   - `enter`, `leave`: [optional] (see EagleJS doc)
 
 4. Change `theme.css` to adjust the theme template used (including the menu style).
 
 ### Project setup
+
 ```
 npm install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
 npm run serve
 ```
 
 ### Compiles and minifies for production
+
 ```
 npm run build
 ```
 
 ### Run your tests
+
 ```
 npm run test
 ```
 
 ### Lints and fixes files
+
 ```
 npm run lint
 ```
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Update from the presentation template repository
+
+```
+git pull upstream master
+```
+
+Note: this will overwrite the modifications in the local repository, if you prefer controlling the update (i.e., _merge_), have a look there: https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork

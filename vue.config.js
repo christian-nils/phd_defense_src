@@ -1,7 +1,6 @@
 // vue.config.js
 module.exports = {
-  publicPath:
-    process.env.NODE_ENV === "production" ? "/presentation_template/" : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/phd_defense/" : "/",
   chainWebpack: config => {
     const svgRule = config.module.rule("svg");
 
