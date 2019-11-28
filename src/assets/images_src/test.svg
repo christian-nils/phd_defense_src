@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="173.05081mm"
+   height="94.837219mm"
+   viewBox="0 0 173.05081 94.837219"
+   version="1.1"
+   id="svg1886"
+   inkscape:version="1.0beta1 (fe3e306, 2019-09-17)"
+   sodipodi:docname="test.svg">
+  <defs
+     id="defs1880" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.6785746"
+     inkscape:cx="271.54706"
+     inkscape:cy="-61.372897"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1853"
+     inkscape:window-height="1023"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata1883">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-18.986593,-20.737654)">
+    <rect
+       style="fill:#7b7b7b;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round"
+       id="rect2449"
+       width="173.05081"
+       height="94.837219"
+       x="18.986593"
+       y="20.737654"
+       ry="4.1519475" />
+    <g
+       transform="translate(-29.318313,-40.912827)"
+       id="disk">
+      <rect
+         class="rect"
+         ry="0"
+         y="50.203262"
+         x="85.609612"
+         height="31.2707"
+         width="31.2707"
+         id="rect875"
+         style="fill:#3069bb;fill-opacity:1;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round" />
+      <ellipse
+         style="fill:#000000;fill-opacity:1;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round"
+         id="path869"
+         cx="101.24496"
+         cy="65.838608"
+         rx="1.4909369"
+         ry="2.4123864" />
+    </g>
+  </g>
+  <path
+     sodipodi:nodetypes="csc"
+     inkscape:connector-curvature="0"
+     id="motionPath"
+     d="m 68.575404,19.82348 c 0,0 -53.59546,10.435581 -52.598062,14.101863 23.111389,84.953917 95.903878,-38.1830302 132.416118,7.957209"
+     style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+</svg>
