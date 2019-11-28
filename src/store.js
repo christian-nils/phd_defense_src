@@ -45,6 +45,16 @@ export default new Vuex.Store({
         steps: 2
       },
       {
+        name: "ISSDriverModel",
+        menuName: "ISS & driver model",
+        path: "/ISS-driver-model",
+        enterNext: "fadeInRight",
+        enterPrev: "fadeInLeft",
+        leaveNext: "fadeOutLeft",
+        leavePrev: "fadeOut",
+        steps: 2
+      },
+      {
         name: "DataCollection",
         menuName: "Data collection",
         path: "/data-collection",

@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+div(style={width: "100%"})
   .center
     ChalmersSVG.full-width
 </template>
