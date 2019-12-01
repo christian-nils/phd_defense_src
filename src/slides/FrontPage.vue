@@ -1,24 +1,16 @@
 <template lang="pug">
-div(style={width: "100%"})
+div(style={width: "60%"})
   .center
-    ChalmersSVG.full-width
+    QRCodeSVG.full-height
+    a(href="https://research.chalmers.se/publication/514013/file/514013_Fulltext.pdf") shorturl.at/gILY3
 </template>
 <script>
-import ChalmersSVG from "../assets/images_src/chalmers_logo.svg";
+import QRCodeSVG from "../assets/images_src/qr-code.svg";
 import { gsap } from "gsap";
 
 export default {
   components: {
-    ChalmersSVG
-  },
-  mounted: function() {
-    const logo = document.getElementById("chalmers_logo");
-    gsap.from(logo.childNodes, {
-      duration: 1,
-      y: "-=100",
-      delay: 1,
-      stagger: 0.25
-    });
+    QRCodeSVG
   }
 };
 </script>
@@ -30,6 +22,10 @@ h4.title {
 
 h4.sub-title {
   margin-top: 0;
+  color: rgb(165, 165, 165);
+}
+
+a {
   color: rgb(165, 165, 165);
 }
 </style>

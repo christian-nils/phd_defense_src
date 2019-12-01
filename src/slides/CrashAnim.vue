@@ -181,6 +181,7 @@ export default {
           y: "-=120",
           scaleX: 0,
           scaleY: 0,
+          opacity: 0,
           rotation: -720,
           ease: "expo"
         },

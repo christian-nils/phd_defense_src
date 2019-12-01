@@ -24,9 +24,13 @@ export default new Vuex.Store({
         leavePrev: "fadeOut"
       },
       {
-        name: "Blank",
-        menuName: "Blank",
-        path: "/blank"
+        name: "Title",
+        menuName: "Title",
+        path: "/title",
+        enterNext: "rotateInDownRight",
+        enterPrev: "fadeIn",
+        leaveNext: "fadeOut",
+        leavePrev: "fadeOut"
       },
       {
         name: "ControlAnim",
@@ -45,14 +49,22 @@ export default new Vuex.Store({
         steps: 2
       },
       {
-        name: "ISSDriverModel",
-        menuName: "ISS & driver model",
-        path: "/ISS-driver-model",
+        name: "PhDOrganisation",
+        menuName: "Ph.D. organisation",
+        path: "/phd-organisation",
         enterNext: "fadeInRight",
         enterPrev: "fadeInLeft",
         leaveNext: "fadeOutLeft",
         leavePrev: "fadeOut",
-        steps: 2
+        steps: 10
+      },
+      {
+        name: "IntroPapers",
+        menuName: "Introduction Papers",
+        path: "/papers",
+        enter: null,
+        leave: null,
+        steps: 6
       },
       {
         name: "DataCollection",
