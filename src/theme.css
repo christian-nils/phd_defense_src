@@ -309,6 +309,7 @@
 .eg-slideshow .flex-item-row {
   margin: 0 auto;
 }
+
 .eg-slideshow .flex-item-column {
   margin: auto 0;
 }
@@ -321,6 +322,10 @@
   height: 100%;
 }
 
+.eg-slideshow .full-height-with-margin {
+  margin-top: 5%;
+  height: 95%;
+}
 /* Menu styling */
 /*.bm-menu {
     background-image: url("./assets/png/escheresque_ste.png");

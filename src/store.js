@@ -33,16 +33,6 @@ export default new Vuex.Store({
         leavePrev: "fadeOut"
       },
       {
-        name: "ControlAnim",
-        menuName: "Driver control",
-        path: "/driver-control",
-        steps: 2,
-        enterNext: "rotateInDownRight",
-        enterPrev: "fadeInLeft",
-        leaveNext: "fadeOutLeft",
-        leavePrev: "fadeOut"
-      },
-      {
         name: "SafetySystems",
         menuName: "Safety systems",
         path: "/safety-systems",
@@ -67,9 +57,58 @@ export default new Vuex.Store({
         steps: 6
       },
       {
-        name: "DataCollection",
-        menuName: "Data collection",
-        path: "/data-collection",
+        name: "Paper1",
+        menuName: "Paper 1",
+        path: "/paper-1",
+        enter: "bounceInUp",
+        leave: "fadeOut",
+        steps: 6
+      },
+      {
+        name: "Paper1Video",
+        menuName: "Paper 1 video",
+        path: "/paper-1-video",
+        enter: "fadeIn",
+        leave: "bounceOutUp"
+      },
+      {
+        name: "Paper1Metrics",
+        menuName: "Paper 1 metrics",
+        path: "/paper-1-metrics",
+        enter: "bounceInUp",
+        leave: "bounceOutUp",
+        steps: 9
+      },
+      {
+        name: "Paper1Results",
+        menuName: "Paper 1 results",
+        path: "/paper-1-results",
+        enter: "bounceInUp",
+        leave: "bounceOutLeft",
+        steps: 5
+      },
+      {
+        name: "Paper2-4",
+        menuName: "Paper 2-4",
+        path: "/paper-2-4",
+        enter: "bounceInRight",
+        leave: "fadeOutUp",
+        steps: 5
+      },
+      {
+        name: "Paper2-4DataCollection1",
+        menuName: "Data collection 1",
+        path: "/data-collection-1",
+        enter: "fadeInDown",
+        leave: "fadeOutUp",
+        steps: 2
+      },
+      {
+        name: "Paper2-4DataCollection2",
+        menuName: "Data collection 2",
+        path: "/data-collection-2",
+        enter: "fadeInDown",
+        leave: "fadeOutUp",
         steps: 2
       },
       {
