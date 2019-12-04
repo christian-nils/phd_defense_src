@@ -80,12 +80,28 @@ export default new Vuex.Store({
         steps: 9
       },
       {
-        name: "Paper1Results",
-        menuName: "Paper 1 results",
-        path: "/paper-1-results",
+        name: "Paper1Results1",
+        menuName: "Paper 1 results part 1",
+        path: "/paper-1-results-1",
+        enter: "bounceInUp",
+        leave: "bounceOutUp",
+        steps: 5
+      },
+      {
+        name: "Paper1Results2",
+        menuName: "Paper 1 results part 2",
+        path: "/paper-1-results-2",
+        enter: "bounceInUp",
+        leave: "bounceOutUp",
+        steps: 5
+      },
+      {
+        name: "Paper1Results3",
+        menuName: "Paper 1 results Euro NCAP",
+        path: "/paper-1-results-euro-ncap",
         enter: "bounceInUp",
         leave: "bounceOutLeft",
-        steps: 5
+        steps: 2
       },
       {
         name: "Paper2-4",
@@ -110,6 +126,30 @@ export default new Vuex.Store({
         enter: "fadeInDown",
         leave: "fadeOutUp",
         steps: 2
+      },
+      {
+        name: "Paper2Methods",
+        menuName: "Paper 2 Methods",
+        path: "/paper-2-methods",
+        enter: "bounceInUp",
+        leave: "bounceOutUp",
+        steps: 5
+      },
+      {
+        name: "Paper2Results",
+        menuName: "Paper 2 Results",
+        path: "/paper-2-results",
+        enter: "bounceInUp",
+        leave: "bounceOutLeft",
+        steps: 7
+      },
+      {
+        name: "Paper3Methods",
+        menuName: "Paper 3 Methods",
+        path: "/paper-3-methods",
+        enter: "bounceInUp",
+        leave: "bounceOutLeft",
+        steps: 7
       },
       {
         name: "ModellingFramework",
