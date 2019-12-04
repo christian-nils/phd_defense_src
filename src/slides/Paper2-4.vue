@@ -275,7 +275,7 @@ export default {
 .ex-protocol {
   position: absolute;
   top: 200px;
-  left: 800px;
+  left: 700px;
   width: 60%;
   font-size: larger;
 }

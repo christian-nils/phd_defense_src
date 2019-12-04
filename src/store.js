@@ -148,7 +148,15 @@ export default new Vuex.Store({
         menuName: "Paper 3 Methods",
         path: "/paper-3-methods",
         enter: "bounceInUp",
-        leave: "bounceOutLeft",
+        leave: "bounceOutUp",
+        steps: 7
+      },
+      {
+        name: "Paper3Results",
+        menuName: "Paper 3 Results",
+        path: "/paper-3-results",
+        enter: "bounceInUp",
+        leave: "bounceOutUp",
         steps: 7
       },
       {

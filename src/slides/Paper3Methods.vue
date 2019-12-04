@@ -2,17 +2,18 @@
  .full-width.full-height.flex-container.flex-column
         .flex-centered.flex-container.flex-row.title
             CyclistLogoSVG.itemLogo   
-            h3.itemText Paper #[span.blue 2]     
-        Paper2ResponseProcessSVG 
+            h3.itemText Paper #[span.blue 3]     
+        Paper3MethodsSVG
+        p(v-if=' step>2 ') Effects of TTAvis on discomfort
 </template>
 
 <script>
 import CyclistLogoSVG from "../assets/images_src/cyclistLogo.svg";
-import Paper2ResponseProcessSVG from "../assets/images_src/paper2ResponseProcess.svg";
+import Paper3MethodsSVG from "../assets/images_src/paper3Methods.svg";
 import { gsap } from "gsap";
 
 export default {
-  components: { CyclistLogoSVG, Paper2ResponseProcessSVG },
+  components: { CyclistLogoSVG, Paper3MethodsSVG },
   props: {
     step: {
       type: Number,
@@ -45,56 +46,7 @@ export default {
       }
     }
   },
-  mounted() {
-    // Initialize curves
-    var curveLength = [];
-    var curvePaths = document.getElementById("curves").childNodes;
-
-    for (let index = 0; index < curvePaths.length; index++) {
-      curveLength[index] = curvePaths[index].getTotalLength();
-      gsap.set(curvePaths[index], {
-        strokeDasharray: curveLength[index],
-        strokeDashoffset: curveLength[index],
-        autoRound: false
-      });
-    }
-
-    function activateCurve(id) {
-      var tl = gsap.timeline({ paused: true });
-      tl.addLabel("start");
-      tl.to(id + ">*", {
-        duration: 0.5,
-        strokeDashoffset: 0,
-        autoRound: false
-      });
-      tl.addLabel("end");
-      return tl;
-    }
-    var curvesTl = activateCurve("#curves");
-
-    this.$options.timeline = gsap.timeline({ paused: true });
-    this.$options.timeline
-      .addLabel("step1")
-      .add(curvesTl.tweenFromTo("start", "end"))
-      .from("#curveLegend", { duration: 0.5, autoAlpha: 0 })
-      .addLabel("step2")
-      .from("#cyclist", { duration: 0.5, autoAlpha: 0, x: "-=10" })
-      .addLabel("step3")
-      .from("#labels>*", {
-        duration: 0.5,
-        y: "+=100",
-        stagger: 0.1,
-        autoAlpha: 0
-      })
-      .addLabel("step4")
-      .from("#metrics>*", {
-        duration: 0.5,
-        y: "-=100",
-        stagger: 0.1,
-        autoAlpha: 0
-      })
-      .addLabel("step5");
-  }
+  mounted() {}
 };
 </script>
 
