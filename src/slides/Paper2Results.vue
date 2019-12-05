@@ -180,22 +180,6 @@ export default {
   font-size: larger;
 }
 
-span.red {
-  color: red;
-}
-
-span.blue {
-  color: #4284b7ff;
-}
-
-span.yellow {
-  color: #ffe605ff;
-}
-
-span.bold {
-  font-weight: bold;
-}
-
 #paper2CBNAFactors {
   width: 400px;
   margin: auto;

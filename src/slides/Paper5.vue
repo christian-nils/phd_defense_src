@@ -1,23 +1,25 @@
 <template lang="pug">
     .full-width.full-height.flex-container.flex-column
         .flex-centered.flex-container.flex-row.title
-            CyclistLogoSVG.itemLogo   
-            h3.itemText Papers 2-4               
+            CounterfactualLogoSVG.itemLogo   
+            h3.itemText Paper 5                
         div.factors.center
-            Paper24FactorsSVG
+            Paper1FactorsSVG
         div.ex-protocol
-            Paper24TrialOrderSVG
+            eg-transition(enter="bounceInRight" leave="bounceOutRight")
+                p(v-if='step>4') Fractional factorial design: #[span.red.bold 128] trials to #[span.blue.bold 32] trials
+            Paper1TrialOrderSVG
 </template>
 
 <script>
-import Paper24FactorsSVG from "../assets/images_src/paper24Factors.svg";
-import CyclistLogoSVG from "../assets/images_src/cyclistLogo.svg";
-import Paper24TrialOrderSVG from "../assets/images_src/paper24TrialOrder.svg";
+import Paper1FactorsSVG from "../assets/images_src/paper1Factors.svg";
+import CounterfactualLogoSVG from "../assets/images_src/counterfactualLogo.svg";
+import Paper1TrialOrderSVG from "../assets/images_src/paper1TrialOrder.svg";
 import { gsap } from "gsap";
 
 export default {
-  name: "Paper24",
-  components: { Paper24FactorsSVG, CyclistLogoSVG, Paper24TrialOrderSVG },
+  name: "Paper1",
+  components: { Paper1FactorsSVG, CounterfactualLogoSVG, Paper1TrialOrderSVG },
   props: {
     step: {
       type: Number,
@@ -95,6 +97,7 @@ export default {
         }
       );
       tl.add(activateConnector(2, "<"));
+      tl.to("#euroNCAPFactors > .bracket", { duration: 0.25, autoAlpha: 1 });
       tl.fromTo(
         "#euroNCAPFactors >  .factor",
         { y: -100 },
@@ -244,13 +247,13 @@ export default {
 </script>
 
 <style>
-.slide-Paper2-4 {
+.slide-Paper5 {
   background-color: whitesmoke;
 }
-.slide-Paper2-4 h1,
-.slide-Paper2-4 h2,
-.slide-Paper2-4 h3,
-.slide-Paper2-4 h4 {
+.slide-Paper5 h1,
+.slide-Paper5 h2,
+.slide-Paper5 h3,
+.slide-Paper5 h4 {
   color: black;
 }
 </style>
@@ -267,7 +270,6 @@ export default {
 }
 .factors {
   max-height: 1000px;
-  margin: auto;
 }
 .title {
   margin-top: 50px;
@@ -276,14 +278,8 @@ export default {
 .ex-protocol {
   position: absolute;
   top: 200px;
-  left: 700px;
+  left: 800px;
   width: 60%;
   font-size: larger;
-}
-
-span.blue {
-  background-color: #a6dff3ff;
-  padding-left: 4px;
-  padding-right: 4px;
 }
 </style>

@@ -1,18 +1,14 @@
 <template lang="pug">
- .full-width.full-height.flex-container.flex-column
-        .flex-centered.flex-container.flex-row.title
-            CyclistLogoSVG.itemLogo   
-            h3.itemText Paper #[span.blue 3]     
-        Paper3MethodsSVG
+  .full-width.full-height.flex-container
+    Paper4Methods1SVG
 </template>
 
 <script>
-import CyclistLogoSVG from "../assets/images_src/cyclistLogo.svg";
-import Paper3MethodsSVG from "../assets/images_src/paper3Methods.svg";
+import Paper4Methods1SVG from "../assets/images_src/paper4DriverModelDetailed.svg";
 import { gsap } from "gsap";
 
 export default {
-  components: { CyclistLogoSVG, Paper3MethodsSVG },
+  components: { Paper4Methods1SVG },
   props: {
     step: {
       type: Number,
@@ -47,49 +43,19 @@ export default {
   },
   mounted() {
     this.$options.timeline = gsap.timeline({ paused: true });
-
     this.$options.timeline
       .addLabel("step1")
-      .from("#discomfort", { duration: 0.5, autoAlpha: 0 })
-      .addLabel("step2");
+      .from("#mainBlock", { duration: 0.5, fill: "#393939" })
+      .addLabel("step2")
+      .from("#exBranchBlock", { duration: 0.5, fill: "#393939" })
+      .from("#inBranchBlock", { duration: 0.5, fill: "#393939" }, "<")
+      .addLabel("step3")
+      .from("#linkBlock", { duration: 0.5, fill: "#393939" })
+      .addLabel("step4")
+      .from("#controlBlock", { duration: 0.5, fill: "#393939" })
+      .addLabel("step5");
   }
 };
 </script>
 
-<style scoped>
-.itemLogo {
-  vertical-align: middle;
-  height: 100px;
-  margin-right: 10px;
-}
-.itemText {
-  vertical-align: middle;
-  margin: 0;
-}
-.factors {
-  max-height: 1000px;
-}
-.title {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-.ex-protocol {
-  position: absolute;
-  top: 200px;
-  left: 800px;
-  width: 60%;
-  font-size: larger;
-}
-
-span.red {
-  color: red;
-}
-
-span.blue {
-  color: #4284b7ff;
-}
-
-span.bold {
-  font-weight: bold;
-}
-</style>
+<style></style>

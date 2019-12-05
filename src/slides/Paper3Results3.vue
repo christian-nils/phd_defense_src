@@ -1,15 +1,14 @@
 <template lang="pug">
- .full-width.full-height-with-margin.center
-        Paper3Results1SVG 
+ .full-width.full-height.center.flex-container
+    Paper3Results3SVG
 </template>
 
 <script>
-import CyclistLogoSVG from "../assets/images_src/cyclistLogo.svg";
-import Paper3Results1SVG from "../assets/images_src/paper3Results1.svg";
+import Paper3Results3SVG from "../assets/images_src/paper3Results3.svg";
 import { gsap } from "gsap";
 
 export default {
-  components: { CyclistLogoSVG, Paper3Results1SVG },
+  components: { Paper3Results3SVG },
   props: {
     step: {
       type: Number,
@@ -43,48 +42,35 @@ export default {
     }
   },
   mounted() {
-    function getPointsTimeline(id) {
-      var tl = gsap.timeline({ paused: true });
-      tl.addLabel("start");
-      tl.from("#" + id + ">*", {
-        duration: 0.5,
-        autoAlpha: 0,
-        scale: 0,
-        transformOrigin: "center",
-        stagger: 0.005,
-        ease: "back.out(4)"
-      });
-      tl.addLabel("end");
-      return tl;
-    }
-    var SIMPtsTimeline = getPointsTimeline("SIMPts");
-    var TTPtsTimeline = getPointsTimeline("TTPts");
-    var SIMSTPtsTimeline = getPointsTimeline("SIMSTPts");
-
     this.$options.timeline = gsap.timeline({ paused: true });
     this.$options.timeline
       .addLabel("step1")
-      .from("#collectedData", { duration: 0.5, x: "-=100", autoAlpha: 0 })
-      .from("#legend", { duration: 0.5, x: "+=100", autoAlpha: 0 }, "<")
-      .addLabel("step2")
-      .add(SIMPtsTimeline.tweenFromTo("start", "end").timeScale(2))
-      .addLabel("step3")
-      .add(TTPtsTimeline.tweenFromTo("start", "end").timeScale(2))
-      .addLabel("step4")
-      .add(SIMSTPtsTimeline.tweenFromTo("start", "end"))
-      .addLabel("step5")
-      .from("#modelledData>*", {
+      .from("#paper2", {
         duration: 0.5,
-        transformOrigin: "center",
-        y: "+=100",
         autoAlpha: 0,
-        stagger: 0.05
+        y: "-=100"
       })
-      .addLabel("step6");
+      .from("#arrow1", {
+        duration: 0.5,
+        autoAlpha: 0,
+        scaleY: 0,
+        transformOrigin: "center top"
+      })
+      .from("#arrow2", {
+        duration: 0.5,
+        autoAlpha: 0,
+        scaleX: 0,
+        transformOrigin: "right middle"
+      })
+      .addLabel("step2");
   }
 };
 </script>
-
+<style>
+.slide-Paper3Results3 {
+  color: whitesmoke;
+}
+</style>
 <style scoped>
 .itemLogo {
   vertical-align: middle;
@@ -102,14 +88,6 @@ export default {
   margin-top: 50px;
   margin-bottom: 50px;
 }
-.ex-protocol {
-  position: absolute;
-  top: 200px;
-  left: 800px;
-  width: 60%;
-  font-size: larger;
-}
-
 span.red {
   color: red;
 }
@@ -120,5 +98,9 @@ span.blue {
 
 span.bold {
   font-weight: bold;
+}
+
+svg {
+  margin: 0 100px;
 }
 </style>

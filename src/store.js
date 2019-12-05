@@ -60,54 +60,60 @@ export default new Vuex.Store({
         name: "Paper1",
         menuName: "Paper 1",
         path: "/paper-1",
-        enter: "bounceInUp",
+        enter: "slideInUp",
         leave: "fadeOut",
-        steps: 6
+        steps: 5
       },
       {
         name: "Paper1Video",
         menuName: "Paper 1 video",
         path: "/paper-1-video",
         enter: "fadeIn",
-        leave: "bounceOutUp"
+        leave: "slideOutUp"
       },
       {
         name: "Paper1Metrics",
         menuName: "Paper 1 metrics",
         path: "/paper-1-metrics",
-        enter: "bounceInUp",
-        leave: "bounceOutUp",
+        enterNext: "slideInUp",
+        leaveNext: "slideOutUp",
+        enterPrev: "slideInDown",
+        leavePrev: "slideOutDown",
         steps: 9
       },
       {
         name: "Paper1Results1",
         menuName: "Paper 1 results part 1",
         path: "/paper-1-results-1",
-        enter: "bounceInUp",
-        leave: "bounceOutUp",
+        enterNext: "slideInUp",
+        leaveNext: "slideOutUp",
+        enterPrev: "slideInDown",
+        leavePrev: "slideOutDown",
         steps: 5
       },
       {
         name: "Paper1Results2",
         menuName: "Paper 1 results part 2",
         path: "/paper-1-results-2",
-        enter: "bounceInUp",
-        leave: "bounceOutUp",
+        enterNext: "slideInUp",
+        leaveNext: "slideOutUp",
+        enterPrev: "slideInDown",
+        leavePrev: "slideOutDown",
         steps: 5
       },
       {
         name: "Paper1Results3",
         menuName: "Paper 1 results Euro NCAP",
         path: "/paper-1-results-euro-ncap",
-        enter: "bounceInUp",
-        leave: "bounceOutLeft",
+        enter: "slideInUp",
+        leave: "slideOutLeft",
         steps: 2
       },
       {
         name: "Paper2-4",
         menuName: "Paper 2-4",
         path: "/paper-2-4",
-        enter: "bounceInRight",
+        enter: "slideInRight",
         leave: "fadeOutUp",
         steps: 5
       },
@@ -131,75 +137,127 @@ export default new Vuex.Store({
         name: "Paper2Methods",
         menuName: "Paper 2 Methods",
         path: "/paper-2-methods",
-        enter: "bounceInUp",
-        leave: "bounceOutUp",
+        enterNext: "slideInUp",
+        leaveNext: "slideOutUp",
+        enterPrev: "slideInDown",
+        leavePrev: "slideOutDown",
         steps: 5
       },
       {
         name: "Paper2Results",
         menuName: "Paper 2 Results",
         path: "/paper-2-results",
-        enter: "bounceInUp",
-        leave: "bounceOutLeft",
+        enter: "slideInUp",
+        leave: "slideOutLeft",
         steps: 7
       },
       {
         name: "Paper3Methods",
         menuName: "Paper 3 Methods",
         path: "/paper-3-methods",
-        enter: "bounceInUp",
-        leave: "bounceOutUp",
-        steps: 7
+        enterNext: "slideInUp",
+        leaveNext: "slideOutUp",
+        enterPrev: "slideInDown",
+        leavePrev: "slideOutDown",
+        steps: 2
       },
       {
-        name: "Paper3Results",
-        menuName: "Paper 3 Results",
-        path: "/paper-3-results",
-        enter: "bounceInUp",
-        leave: "bounceOutUp",
-        steps: 7
+        name: "Paper3Results1",
+        menuName: "Paper 3 Results 1",
+        path: "/paper-3-results-1",
+        enterNext: "slideInUp",
+        leaveNext: "slideOutUp",
+        enterPrev: "slideInDown",
+        leavePrev: "slideOutDown",
+        steps: 5
       },
       {
-        name: "ModellingFramework",
-        menuName: "Modelling Framework",
-        path: "/modelling-framework",
+        name: "Paper3Results2",
+        menuName: "Paper 3 Results 2",
+        path: "/paper-3-results-2",
+        enterNext: "slideInUp",
+        leaveNext: "slideOutUp",
+        enterPrev: "slideInDown",
+        leavePrev: "slideOutDown",
         steps: 3
       },
       {
-        name: "Looming",
-        menuName: "Looming",
-        path: "/looming",
+        name: "Paper3Results3",
+        menuName: "Paper 3 Results 3",
+        path: "/paper-3-results-3",
+        enter: "slideInUp",
+        leave: "slideOutLeft",
+        steps: 2
+      },
+      {
+        name: "Paper4Methods",
+        menuName: "Paper 4 Methods",
+        path: "/paper-4-methods",
+        enter: "slideInRight",
+        leave: "slideOutUp",
+        steps: 4
+      },
+      {
+        name: "Paper4ModellingFramework",
+        menuName: "Paper 4 modelling framework",
+        path: "/paper-4-modelling-framework",
+        enterNext: "slideInUp",
+        leaveNext: "slideOutUp",
+        enterPrev: "slideInDown",
+        leavePrev: "slideOutDown",
+        steps: 9
+      },
+      {
+        name: "Paper4Looming",
+        menuName: "Paper 4 traditional looming",
+        path: "/paper-4-traditional-looming",
         steps: 4,
-        enter: "fadeIn",
-        leave: "fadeOut"
+        enter: "slideInUp",
+        leave: "slideOutUp"
       },
       {
-        name: "LoomingCueDef",
-        menuName: "Longitudinal looming cue definition",
-        path: "/looming-cue-def",
+        name: "Paper4LoomingCueDef",
+        menuName: "Paper 4 longitudinal looming",
+        path: "/paper-4-looming-def",
         steps: 2,
-        enter: "fadeIn",
-        leave: "fadeOut"
+        enter: "slideInUp",
+        leave: "slideOutUp"
       },
       {
-        name: "PETCueDef",
-        menuName: "PET cue definition",
-        path: "/PET-cue-def",
+        name: "Paper4PETCueDef",
+        menuName: "Paper 4 PET definition",
+        path: "/Paper-4-PET-def",
         steps: 2,
-        enter: "fadeIn",
-        leave: "fadeOut"
+        enter: "slideInUp",
+        leave: "slideOutUp"
       },
       {
-        name: "DriverModel",
-        menuName: "Driver model",
-        path: "/driver-model",
+        name: "Paper4DriverModel",
+        menuName: "Paper 4 driver model",
+        path: "/paper-4-driver-model",
+        steps: 5,
+        enter: "slideInUp",
+        leave: "slideOutUp"
+      },
+      {
+        name: "Paper4DriverModelExample",
+        menuName: "Paper 4 driver model example",
+        path: "/paper-4-driver-model-example",
+        steps: 2,
+        enter: "slideInUp",
+        leave: "slideOutLeft"
+      },
+      {
+        name: "Paper5",
+        menuName: "Paper 5",
+        path: "/paper-5",
         steps: 2
       },
       {
         name: "ThankYou",
         menuName: "Thanks",
         path: "/thanks",
-        enter: "bounceInUp",
+        enter: "slideInUp",
         leave: "fadeOut"
       }
     ]

@@ -41,7 +41,6 @@ export default {
           break;
         case "prev":
           this.$options.tweenFromTo.kill();
-          console.log("pause");
           gsap.set(this.$options.timeline, { timeScale: 2.5 });
           this.$options.tweenFromTo = this.$options.timeline.tweenFromTo(
             this.$options.timeline.time(),
@@ -278,22 +277,14 @@ export default {
 .ex-protocol {
   position: absolute;
   top: 200px;
-  left: 800px;
+  left: 700px;
   width: 60%;
   font-size: larger;
-}
-
-span.red {
-  color: red;
 }
 
 span.blue {
   background-color: #a6dff3ff;
   padding-left: 4px;
   padding-right: 4px;
-}
-
-span.bold {
-  font-weight: bold;
 }
 </style>

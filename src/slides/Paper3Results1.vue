@@ -1,18 +1,15 @@
 <template lang="pug">
- .full-width.full-height.flex-container.flex-column
-        .flex-centered.flex-container.flex-row.title
-            CyclistLogoSVG.itemLogo   
-            h3.itemText Paper #[span.blue 3]     
-        Paper3MethodsSVG
+ .full-width.full-height-with-margin.center
+        Paper3Results1SVG 
 </template>
 
 <script>
 import CyclistLogoSVG from "../assets/images_src/cyclistLogo.svg";
-import Paper3MethodsSVG from "../assets/images_src/paper3Methods.svg";
+import Paper3Results1SVG from "../assets/images_src/paper3Results1.svg";
 import { gsap } from "gsap";
 
 export default {
-  components: { CyclistLogoSVG, Paper3MethodsSVG },
+  components: { CyclistLogoSVG, Paper3Results1SVG },
   props: {
     step: {
       type: Number,
@@ -46,12 +43,41 @@ export default {
     }
   },
   mounted() {
-    this.$options.timeline = gsap.timeline({ paused: true });
+    function getPointsTimeline(id) {
+      var tl = gsap.timeline({ paused: true });
+      tl.addLabel("start");
+      tl.from("#" + id + ">*", {
+        duration: 0.5,
+        autoAlpha: 0,
+        scale: 0,
+        transformOrigin: "center",
+        stagger: 0.005,
+        ease: "back.out(4)"
+      });
+      tl.addLabel("end");
+      return tl;
+    }
+    var SIMPtsTimeline = getPointsTimeline("SIMPts");
+    var TTPtsTimeline = getPointsTimeline("TTPts");
+    var SIMSTPtsTimeline = getPointsTimeline("SIMSTPts");
 
+    this.$options.timeline = gsap.timeline({ paused: true });
     this.$options.timeline
       .addLabel("step1")
-      .from("#discomfort", { duration: 0.5, autoAlpha: 0 })
-      .addLabel("step2");
+      .add(SIMPtsTimeline.tweenFromTo("start", "end").timeScale(2))
+      .addLabel("step2")
+      .add(TTPtsTimeline.tweenFromTo("start", "end").timeScale(2))
+      .addLabel("step3")
+      .add(SIMSTPtsTimeline.tweenFromTo("start", "end"))
+      .addLabel("step4")
+      .from("#modelledData", {
+        duration: 0.5,
+        transformOrigin: "center",
+        y: "+=100",
+        autoAlpha: 0,
+        stagger: 0.05
+      })
+      .addLabel("step5");
   }
 };
 </script>
