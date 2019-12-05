@@ -220,6 +220,10 @@
   color: #4284b7ff;
 }
 
+.eg-theme-agrume tspan.blue {
+  fill: #4284b7ff;
+}
+
 .eg-theme-agrume span.red {
   color: red;
 }
