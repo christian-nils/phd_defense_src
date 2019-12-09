@@ -4,13 +4,13 @@
         .full-width
             eg-transition(enter="bounceInUp" leave="bounceOutDown")
                 h4(v-if='step>5') Analysed metrics
-            ul 
+            ul
                 eg-transition(enter="bounceInUp" leave="bounceOutDown")
                     li(v-if='step>6') Response times: #[span.strong gRT], #[span.strong rRT], and #[span.strong bRT]
                 eg-transition(enter="bounceInUp" leave="bounceOutDown")
                     li(v-if='step>7') Times: car's time-to-arrival (#[span.strong TTA]), pedestrian's time-to-arrival (#[span.strong pTTA]), and minimum TTA (#[span.strong mTTA])
                 eg-transition(enter="bounceInUp" leave="bounceOutDown")
-                    li(v-if='step>8') Distances: #[span.strong lateral] and #[span.strong longitudinal]            
+                    li(v-if='step>8') Distances: #[span.strong lateral] and #[span.strong longitudinal]
 </template>
 
 <script>

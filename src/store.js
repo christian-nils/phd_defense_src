@@ -12,7 +12,8 @@ export default new Vuex.Store({
         menuName: "Front Page",
         path: "/",
         enter: "fadeIn",
-        leave: "fadeOut"
+        leave: "fadeOut",
+        slideNumber: false
       },
       {
         name: "CrashAnim",
@@ -21,41 +22,43 @@ export default new Vuex.Store({
         enterNext: "fadeIn",
         enterPrev: "fadeIn",
         leaveNext: "rotateOutDownLeft",
-        leavePrev: "fadeOut"
+        leavePrev: "fadeOut",
+        slideNumber: false
       },
       {
         name: "Title",
         menuName: "Title",
         path: "/title",
-        enterNext: "rotateInDownRight",
+        enterNext: "rotateInDownLeft",
         enterPrev: "fadeIn",
         leaveNext: "fadeOut",
-        leavePrev: "fadeOut"
+        leavePrev: "fadeOut",
+        slideNumber: false
       },
       {
         name: "SafetySystems",
         menuName: "Safety systems",
         path: "/safety-systems",
+        enter: "fadeIn",
+        leave: "fadeOut",
         steps: 2
       },
       {
         name: "PhDOrganisation",
         menuName: "Ph.D. organisation",
         path: "/phd-organisation",
-        enterNext: "fadeInRight",
-        enterPrev: "fadeInLeft",
-        leaveNext: "fadeOutLeft",
-        leavePrev: "fadeOut",
+        enter: "fadeIn",
+        leave: "fadeOut",
         steps: 10
       },
       {
         name: "IntroPapers",
         menuName: "Introduction Papers",
         path: "/papers",
-        enterNext: "slideInUp",
-        leaveNext: "slideOutLeft",
+        enterNext: "fadeIn",
         enterPrev: "slideInLeft",
-        leavePrev: "slideOutDown",
+        leaveNext: "fadeOut",
+        leavePrev: "fadeOut",
         steps: 6
       },
       {
@@ -149,7 +152,7 @@ export default new Vuex.Store({
       },
       {
         name: "Paper2Methods",
-        menuName: "Paper 2 Methods",
+        menuName: "Paper 2 methods",
         path: "/paper-2-methods",
         enterNext: "slideInUp",
         leaveNext: "slideOutUp",
@@ -159,7 +162,7 @@ export default new Vuex.Store({
       },
       {
         name: "Paper2Results",
-        menuName: "Paper 2 Results",
+        menuName: "Paper 2 results",
         path: "/paper-2-results",
         enterNext: "slideInUp",
         leaveNext: "slideOutLeft",
@@ -169,7 +172,7 @@ export default new Vuex.Store({
       },
       {
         name: "Paper3Methods",
-        menuName: "Paper 3 Methods",
+        menuName: "Paper 3 methods",
         path: "/paper-3-methods",
         enterNext: "slideInRight",
         leaveNext: "slideOutUp",
@@ -179,7 +182,7 @@ export default new Vuex.Store({
       },
       {
         name: "Paper3Results1",
-        menuName: "Paper 3 Results 1",
+        menuName: "Paper 3 results 1",
         path: "/paper-3-results-1",
         enterNext: "slideInUp",
         leaveNext: "slideOutUp",
@@ -189,7 +192,7 @@ export default new Vuex.Store({
       },
       {
         name: "Paper3Results3",
-        menuName: "Paper 3 Results 3",
+        menuName: "Paper 3 results 3",
         path: "/paper-3-results-3",
         enterNext: "slideInUp",
         leaveNext: "slideOutLeft",
@@ -199,7 +202,7 @@ export default new Vuex.Store({
       },
       {
         name: "Paper4Methods",
-        menuName: "Paper 4 Methods",
+        menuName: "Paper 4 methods",
         path: "/paper-4-methods",
         enterNext: "slideInRight",
         leaveNext: "slideOutUp",
@@ -302,7 +305,8 @@ export default new Vuex.Store({
         menuName: "Thanks",
         path: "/thanks",
         enter: "slideInUp",
-        leave: "fadeOut"
+        leave: "fadeOut",
+        slideNumber: false
       },
       {
         name: "AppendixPaper3Results2",

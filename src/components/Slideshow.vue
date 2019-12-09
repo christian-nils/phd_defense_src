@@ -14,7 +14,7 @@
       )
         template
           router-view(v-bind:step="step")
-        template(#footer).eg-slide-footer.eg-footer
+        template(v-if="((slide.slideNumber == undefined )? true : slide.slideNumber)" #footer).eg-slide-footer
           .left-part
             ChalmersLOGO
           .center-part
