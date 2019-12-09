@@ -85,7 +85,7 @@ export default {
 </style>
 <style scoped>
 p {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 svg {
   height: 400px;

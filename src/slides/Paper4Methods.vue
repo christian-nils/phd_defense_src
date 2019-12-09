@@ -1,8 +1,8 @@
 <template lang="pug">
  .full-width.full-height.flex-container.flex-column
         .flex-centered.flex-container.flex-row.title
-            CyclistLogoSVG.itemLogo   
-            h3.itemText Paper #[span.blue 4]   
+            CyclistLogoSVG.itemLogo
+            h3.itemText Paper #[span.blue 4]
         center.full-height
           eg-transition(enter="bounceInUp" leave="bounceOutDown")
             p(v-if='step>1') Extend the model from PAPER #[span.blue 2]
@@ -10,7 +10,7 @@
             p(v-if='step>2') Modelling framework based on #[span.blue evidence accumulation]
           eg-transition(enter="bounceInUp" leave="bounceOutDown")
             p(v-if='step>3') #[span.red Note:] only #[span.blue test-track] data
-       
+
 </template>
 
 <script>
@@ -61,6 +61,6 @@ span.bold {
   font-weight: bold;
 }
 p {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 </style>

@@ -4,7 +4,7 @@
     .conclusions
       eg-transition(enter='slideInRight' leave='slideOutLeft')
         div(v-if='step <= 4')
-          DriverAnalysesSVG.itemLogo 
+          DriverAnalysesSVG.itemLogo
           p.itemText Investigate and describe driver behaviour
           ul
             eg-transition(enter='bounceInUp' leave='bounceOutLeft')
@@ -19,11 +19,11 @@
           p.itemText Devise driver models
           ul
             eg-transition(enter='bounceInUp' leave='bounceOutLeft')
-              li(v-if='step >= 6') Predictive models for key points of the driver response (Papers 1 and 2)
+              li(v-if='step >= 6') Models for key points of the driver response (Papers 1 and 2)
             eg-transition(enter='bounceInUp' leave='bounceOutLeft')
-              li(v-if='step >= 7') Predictive model for discomfort model (Paper 3)
+              li(v-if='step >= 7') Model for discomfort model (Paper 3)
             eg-transition(enter='bounceInUp' leave='bounceOutLeft')
-              li(v-if='step >= 8') Computational model predicting driver brake pedal deflection (Paper 4)
+              li(v-if='step >= 8') Model predicting driver brake pedal deflection (Paper 4)
       eg-transition(enter='slideInRight' leave='slideOutLeft')
         div(v-if='step >= 9 && step <=11')
           euroNCAPKnowledgeSVG.itemLogo

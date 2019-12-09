@@ -1,10 +1,10 @@
 <template lang="pug">
-    .full-width.full-height-with-margin
+    .full-width.full-height-with-margin.center
         Paper1ResultsMainEffectsSVG
 </template>
 
 <script>
-import Paper1ResultsMainEffectsSVG from "../assets/images_src/paper1ResultsMainEffectss.svg";
+import Paper1ResultsMainEffectsSVG from "../assets/images_src/paper1ResultsMainEffects.svg";
 import { gsap } from "gsap";
 export default {
   components: { Paper1ResultsMainEffectsSVG },

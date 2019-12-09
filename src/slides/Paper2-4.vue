@@ -1,8 +1,8 @@
 <template lang="pug">
     .full-width.full-height.flex-container.flex-column
         .flex-centered.flex-container.flex-row.title
-            CyclistLogoSVG.itemLogo   
-            h3.itemText Papers 2-4               
+            CyclistLogoSVG.itemLogo
+            h3.itemText Papers 2-4
         div.factors.center
             Paper24FactorsSVG
         div.ex-protocol
@@ -264,10 +264,6 @@ export default {
 .itemText {
   vertical-align: middle;
   margin: 0;
-}
-.factors {
-  max-height: 1000px;
-  margin: auto;
 }
 .title {
   margin-top: 50px;

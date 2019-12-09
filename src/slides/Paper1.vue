@@ -1,17 +1,18 @@
 <template lang="pug">
-    .full-width.full-height.flex-container.flex-column
-        .flex-centered.flex-container.flex-row.title
-            PedestrianLogoSVG.itemLogo   
-            h3.itemText Paper 1                
-        div.factors.center
-            Paper1FactorsSVG
-        div.ex-protocol
-            eg-transition(enter="bounceInRight" leave="bounceOutRight")
-                p(v-if='step>4') Fractional factorial design: #[span.red.bold 128] trials to #[span.blue.bold 32] trials
-            Paper1TrialOrderSVG
+      .full-width.full-height.flex-container.flex-column
+          .flex-centered.flex-container.flex-row.title
+              PedestrianLogoSVG.itemLogo
+              h3.itemText Paper 1
+          div.factors.center
+              Paper1FactorsSVG
+          div.ex-protocol
+              eg-transition(enter="bounceInRight" leave="bounceOutRight")
+                  p(v-if='step>4') Fractional factorial design: #[span.red.bold 128] trials to #[span.blue.bold 32] trials
+              Paper1TrialOrderSVG
 </template>
 
 <script>
+import test from "../components/test";
 import Paper1FactorsSVG from "../assets/images_src/paper1Factors.svg";
 import PedestrianLogoSVG from "../assets/images_src/pedestrianLogo.svg";
 import Paper1TrialOrderSVG from "../assets/images_src/paper1TrialOrder.svg";
@@ -19,7 +20,12 @@ import { gsap } from "gsap";
 
 export default {
   name: "Paper1",
-  components: { Paper1FactorsSVG, PedestrianLogoSVG, Paper1TrialOrderSVG },
+  components: {
+    Paper1FactorsSVG,
+    PedestrianLogoSVG,
+    Paper1TrialOrderSVG,
+    test
+  },
   props: {
     step: {
       type: Number,
@@ -268,7 +274,7 @@ export default {
   margin: 0;
 }
 .factors {
-  max-height: 1000px;
+  max-height: 750px;
 }
 .title {
   margin-top: 50px;

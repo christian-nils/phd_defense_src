@@ -119,7 +119,7 @@ export default new Vuex.Store({
       },
       {
         name: "Paper2-4",
-        menuName: "Paper 2-4",
+        menuName: "Papers 2-4",
         path: "/paper-2-4",
         enterNext: "slideInRight",
         leaveNext: "slideOutUp",
@@ -186,16 +186,6 @@ export default new Vuex.Store({
         enterPrev: "slideInDown",
         leavePrev: "slideOutDown",
         steps: 5
-      },
-      {
-        name: "Paper3Results2",
-        menuName: "Paper 3 Results 2",
-        path: "/paper-3-results-2",
-        enterNext: "slideInUp",
-        leaveNext: "slideOutUp",
-        enterPrev: "slideInDown",
-        leavePrev: "slideOutDown",
-        steps: 3
       },
       {
         name: "Paper3Results3",
@@ -313,6 +303,16 @@ export default new Vuex.Store({
         path: "/thanks",
         enter: "slideInUp",
         leave: "fadeOut"
+      },
+      {
+        name: "AppendixPaper3Results2",
+        menuName: "Appendix Paper 3 Results 2",
+        path: "/appendix-paper-3-results-2",
+        enterNext: "slideInUp",
+        leaveNext: "slideOutUp",
+        enterPrev: "slideInDown",
+        leavePrev: "slideOutDown",
+        steps: 3
       }
     ]
   },

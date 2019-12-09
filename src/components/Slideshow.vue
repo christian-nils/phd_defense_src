@@ -12,14 +12,23 @@
         :class='`slide-${slide.name}`'
         v-bind:key="slide.id"
       )
-        router-view(v-bind:step="step")
+        template
+          router-view(v-bind:step="step")
+        template(#footer).eg-slide-footer.eg-footer
+          .left-part
+            ChalmersLOGO
+          .center-part
+          .right-part
+            span {{ currentSlideIndex }}
 </template>
 
 <script>
 import { Slideshow } from "eagle.js";
 import { mapState, mapMutations } from "vuex";
+import ChalmersLOGO from "../assets/images_src/chalmers_logo.svg";
 
 export default {
+  components: { ChalmersLOGO },
   mixins: [Slideshow],
 
   computed: {
@@ -30,7 +39,6 @@ export default {
 
   watch: {
     currentSlideIndex: "updateUrl",
-
     $route: "updateSlides"
   },
 
@@ -85,7 +93,6 @@ export default {
     updateSlides(route) {
       const index =
         this.availableSlides.findIndex(slide => slide.name === route.name) + 1;
-
       this.setCurrentIndex(index);
       this.currentSlideIndex = index;
     }

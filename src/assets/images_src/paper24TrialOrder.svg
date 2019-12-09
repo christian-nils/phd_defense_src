@@ -12,7 +12,8 @@
    id="svg1690"
    version="1.2"
    viewBox="0 0 286.74133 75.051238"
-   width="100%">
+   width="100%"
+   overflow="visible">
   <metadata
      id="metadata1694">
     <rdf:RDF>
@@ -21,18 +22,18 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
-     inkscape:current-layer="trialLegend"
+     inkscape:current-layer="svg1690"
      inkscape:window-maximized="1"
      inkscape:window-y="27"
      inkscape:window-x="67"
-     inkscape:cy="-20.904313"
-     inkscape:cx="114.18633"
-     inkscape:zoom="2.8"
+     inkscape:cy="99.744765"
+     inkscape:cx="122.26847"
+     inkscape:zoom="3.8263216"
      showgrid="false"
      id="namedview1692"
      inkscape:window-height="1023"
@@ -454,7 +455,7 @@
            y="58.353432"
            x="22.763115"
            id="tspan19908-8-1"
-           sodipodi:role="line">Randomized trials</tspan></text>
+           sodipodi:role="line">Randomized trials (from full factorial design + bicycle braking)</tspan></text>
     </g>
     <g
        id="g3488">
