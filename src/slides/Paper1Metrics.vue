@@ -2,15 +2,15 @@
     .full-width.full-height
         Paper1MethodsSVG
         .full-width
-            eg-transition(enter="bounceInUp" leave="bounceOutDown")
-                h4(v-if='step>5') Analysed metrics
+            eg-transition(enter="fadeIn" leave="fadeOut")
+                h4(v-if='step>4') Analysed metrics
             ul
-                eg-transition(enter="bounceInUp" leave="bounceOutDown")
-                    li(v-if='step>6') Response times: #[span.strong gRT], #[span.strong rRT], and #[span.strong bRT]
-                eg-transition(enter="bounceInUp" leave="bounceOutDown")
-                    li(v-if='step>7') Times: car's time-to-arrival (#[span.strong TTA]), pedestrian's time-to-arrival (#[span.strong pTTA]), and minimum TTA (#[span.strong mTTA])
-                eg-transition(enter="bounceInUp" leave="bounceOutDown")
-                    li(v-if='step>8') Distances: #[span.strong lateral] and #[span.strong longitudinal]
+                eg-transition(enter="fadeIn" leave="fadeOut")
+                    li(v-if='step>5') Response times: #[span.strong gRT], #[span.strong rRT], and #[span.strong bRT]
+                eg-transition(enter="fadeIn" leave="fadeOut")
+                    li(v-if='step>6') Times: car's time-to-arrival (#[span.strong TTA]), pedestrian's time-to-arrival (#[span.strong pTTA]), and minimum TTA (#[span.strong mTTA])
+                eg-transition(enter="fadeIn" leave="fadeOut")
+                    li(v-if='step>7') Distances: #[span.strong lateral] and #[span.strong longitudinal]
 </template>
 
 <script>
@@ -55,56 +55,31 @@ export default {
     function getAnimationTimeline() {
       var tl = gsap.timeline({ pause: true });
       tl.addLabel("step1");
-      tl.from("#timeLine", {
+      tl.from(["#timeline", "#responsePhases"], {
         duration: 0.5,
         scaleX: 0,
         transformOrigin: "0 center",
         x: "-100",
         autoAlpha: 0
       });
-      tl.from("#responsePhases", {
-        duration: 0.5,
-        scaleY: 0,
-        transformOrigin: "middle 0",
-        autoAlpha: 0
-      });
       tl.addLabel("step2");
-      tl.from("#pedestrian", {
+      tl.from(["#pedestrian", "#pedestrianLegend"], {
         duration: 1,
         x: "-=100",
         autoAlpha: 0
       });
-      tl.from("#pedestrianLegend > *", {
-        duration: 0.5,
-        y: "-=100",
-        autoAlpha: 0,
-        stagger: 0.1,
-        ease: "back.out(1.7)"
-      });
       tl.addLabel("step3");
-      tl.from("#keypoints > path", {
+      tl.from("#keypoints", {
         duration: 0.5,
-        stagger: 0.1,
-        y: "+=100",
-        autoAlpha: 0,
-        ease: "none"
-      });
-      tl.from("#keypoints > text", {
-        duration: 0.5,
-        stagger: 0.1,
-        autoAlpha: 0,
-        scaleX: 0,
-        transformOrigin: "0 center",
-        ease: "back.out(1.7)"
-      });
-      tl.addLabel("step4");
-      tl.from("#reactionTimes > *", {
-        duration: 0.5,
-        stagger: 0.1,
-        y: "-=100",
         autoAlpha: 0
       });
+      tl.addLabel("step4");
       tl.addLabel("step5");
+      tl.from("#reactionTimes", {
+        duration: 0.5,
+        autoAlpha: 0
+      });
+      tl.addLabel("step6");
       return tl;
     }
     this.$options.timeline = getAnimationTimeline();

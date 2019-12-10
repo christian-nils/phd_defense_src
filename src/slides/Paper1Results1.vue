@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import Paper1ResultsMainEffectsSVG from "../assets/images_src/paper1ResultsMainEffects.svg";
+import Paper1ResultsMainEffectsSVG from "../assets/images_src/paper1ResultsMainEffectsAtBO.svg";
 import { gsap } from "gsap";
 export default {
   components: { Paper1ResultsMainEffectsSVG },
@@ -43,11 +43,7 @@ export default {
   mounted() {
     function createAllConnectors() {
       for (let i = 1; i < 5; i++) {
-        createConnectors("subplot" + i, "gasRelease");
         createConnectors("subplot" + i, "braking");
-        if (i == 1) {
-          createConnectors("subplot" + i, "mTTA");
-        }
       }
     }
     function createConnectors(subplotID, markerType) {
@@ -149,21 +145,12 @@ export default {
       return tl;
     }
     this.$options.timeline = gsap.timeline({ paused: true });
-    var gasReleaseTimeline = getSubplotTimeline("gasRelease");
     var brakingTimeline = getSubplotTimeline("braking");
+
     this.$options.timeline
       .addLabel("step1")
-      .add(gasReleaseTimeline.tweenFromTo("start", "end"))
-      .addLabel("step2")
-      .add(gasReleaseTimeline.tweenFromTo("end", "start").timeScale(1.5))
-      .add(brakingTimeline.tweenFromTo("start", "end"))
-      .addLabel("step3")
-      .add(brakingTimeline.tweenFromTo("end", "start").timeScale(1.5))
-      .add(getAnimateMarkersTimeline("subplot1", "mTTA"))
-      .addLabel("step4")
-      .add(gasReleaseTimeline.tweenFromTo("start", "end").timeScale(1.5))
       .add(brakingTimeline.tweenFromTo("start", "end").timeScale(1.5))
-      .addLabel("step5");
+      .addLabel("step2");
   }
 };
 </script>

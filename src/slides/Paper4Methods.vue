@@ -4,11 +4,11 @@
             CyclistLogoSVG.itemLogo
             h3.itemText Paper #[span.blue 4]
         center.full-height
-          eg-transition(enter="bounceInUp" leave="bounceOutDown")
+          eg-transition(enter="fadeIn" leave="fadeOut")
             p(v-if='step>1') Extend the model from PAPER #[span.blue 2]
-          eg-transition(enter="bounceInUp" leave="bounceOutDown")
+          eg-transition(enter="fadeIn" leave="fadeOut")
             p(v-if='step>2') Modelling framework based on #[span.blue evidence accumulation]
-          eg-transition(enter="bounceInUp" leave="bounceOutDown")
+          eg-transition(enter="fadeIn" leave="fadeOut")
             p(v-if='step>3') #[span.red Note:] only #[span.blue test-track] data
 
 </template>

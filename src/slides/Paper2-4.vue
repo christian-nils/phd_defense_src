@@ -212,18 +212,20 @@ export default {
 */
     function getTrialOrderAnimation() {
       var tl = gsap.timeline();
-      tl.from("#trialOrder>*", {
-        duration: 0.1,
-        stagger: 0.05,
-        x: "-=100",
+      tl.from("#trialOrder", {
+        duration: 0.5,
         autoAlpha: 0
       });
-      tl.from("#trialLegend>*", {
-        duration: 0.5,
-        y: "+=100",
-        autoAlpha: 0,
-        stagger: 0.1
-      });
+      tl.from(
+        "#trialLegend>*",
+        {
+          duration: 0.5,
+          y: "+=100",
+          autoAlpha: 0,
+          stagger: 0.1
+        },
+        "<"
+      );
       return tl;
     }
 

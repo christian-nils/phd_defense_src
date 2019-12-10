@@ -1,10 +1,10 @@
 <template lang="pug">
     .full-width.full-height.flex-container.center
-        Paper5ResultsSVG      
+        Paper5ResultsSVG
 </template>
 
 <script>
-import Paper5ResultsSVG from "../assets/images_src/paper5Results.svg";
+import Paper5ResultsSVG from "../assets/images_src/paper5SimplifiedResults.svg";
 import RearEndLogoSVG from "../assets/images_src/rearEndLogo.svg";
 
 import { gsap } from "gsap";
@@ -81,26 +81,14 @@ export default {
         ease: "power2.inOut"
       })
       .addLabel("step2")
-      .from("#impactSpeeds", { autoAlpha: 0, x: "+=100", duration: 1 })
-      .from("#legend>*", {
-        stagger: 0.1,
-        duration: 0.5,
-        x: "+=100",
-        autoAlpha: 0
-      })
+      .from("#impactSpeeds", { autoAlpha: 0, duration: 0.5 })
       .addLabel("step3")
-      .add(activateCurve("#curves", 5))
+      .add(activateCurve("#curves", 2))
       .addLabel("step4")
       .add(activateCurve("#curves", 0))
       .addLabel("step5")
       .add(activateCurve("#curves", 1))
-      .addLabel("step6")
-      .add(activateCurve("#curves", 2))
-      .addLabel("step7")
-      .add(activateCurve("#curves", 3))
-      .addLabel("step8")
-      .add(activateCurve("#curves", 4))
-      .addLabel("step9");
+      .addLabel("step6");
     /*this.$options.timeline
       .addLabel("step1")
       .add(getISSTimeline())

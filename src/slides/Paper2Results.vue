@@ -1,12 +1,12 @@
 <template lang="pug">
  .full-width.full-height-with-margin.flex-container.flex-centered
-    Paper2Results1SVG 
+    Paper2Results1SVG
     .absolute
       eg-transition(enter="bounceInLeft" leave=null)
         div(v-if=' step>6 ').flex-container.flex-column
           p.center CBNA-#[span.yellow 50]
           Paper2CBNAFactorsSVG.center
-          p.center #[span.yellow AEB] activation before 0.7 to 0.95s        
+          p.center #[span.yellow AEB] activation before 0.7 to 0.95s
 </template>
 
 <script>
@@ -84,7 +84,7 @@ export default {
         scale: 0,
         transformOrigin: "center",
         stagger: 0.005,
-        ease: "back.out(4)"
+        ease: "back.out(1.7)"
       });
       tl.addLabel("end");
       return tl;

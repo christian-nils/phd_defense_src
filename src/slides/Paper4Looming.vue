@@ -1,7 +1,7 @@
 <template lang="pug">
    div.full-width.full-height
-        h3  Car-following scenario: #[strong Looming]    
-        div.flex-container.flex-row   
+        h3  Car-following scenario: #[strong Looming]
+        div.flex-container.flex-row
             loomingSVG.flex-item-row
             brakeSVG.flex-item-row
 </template>
@@ -81,7 +81,7 @@ export default {
       "#car",
 
       { x: "-=3" },
-      { duration: 1, x: "+=5", repeat: 4, yoyo: true },
+      { duration: 1, x: "+=5", repeat: 2, yoyo: true },
       "start"
     );
 

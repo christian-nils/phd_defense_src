@@ -7,38 +7,38 @@
           DriverAnalysesSVG.itemLogo
           p.itemText Investigate and describe driver behaviour
           ul
-            eg-transition(enter='bounceInUp' leave='bounceOutLeft')
+            eg-transition(enter='fadeIn' leave='fadeOut')
               li(v-if='step >= 2') The moment when the pedestrian or cyclist appears was shown to be crucial (Papers 1-4)
-            eg-transition(enter='bounceInUp' leave='bounceOutLeft')
+            eg-transition(enter='fadeIn' leave='fadeOut')
               li(v-if='step >= 3') Similar brake onset behaviour in simulator and test-track environments (Papers 1-2)
-            eg-transition(enter='bounceInUp' leave='bounceOutLeft')
+            eg-transition(enter='fadeIn' leave='fadeOut')
               li(v-if='step >= 4') Similar self-reported discomfort in simulator and test-track environments (Paper 3)
       eg-transition(enter='slideInRight' leave='slideOutLeft')
         div(v-if='step >= 5 && step <=8')
           DriverModelSVG.itemLogo
           p.itemText Devise driver models
           ul
-            eg-transition(enter='bounceInUp' leave='bounceOutLeft')
+            eg-transition(enter='fadeIn' leave='fadeOut')
               li(v-if='step >= 6') Models for key points of the driver response (Papers 1 and 2)
-            eg-transition(enter='bounceInUp' leave='bounceOutLeft')
+            eg-transition(enter='fadeIn' leave='fadeOut')
               li(v-if='step >= 7') Model for discomfort model (Paper 3)
-            eg-transition(enter='bounceInUp' leave='bounceOutLeft')
+            eg-transition(enter='fadeIn' leave='fadeOut')
               li(v-if='step >= 8') Model predicting driver brake pedal deflection (Paper 4)
       eg-transition(enter='slideInRight' leave='slideOutLeft')
         div(v-if='step >= 9 && step <=11')
           euroNCAPKnowledgeSVG.itemLogo
           p.itemText Provide new knowledge that can be used by assessment programmes
           ul
-            eg-transition(enter='bounceInUp' leave='bounceOutLeft')
+            eg-transition(enter='fadeIn' leave='fadeOut')
               li(v-if='step >= 10') Results in line with Euro NCAP test protocols (Papers 1-3)
-            eg-transition(enter='bounceInUp' leave='bounceOutLeft')
+            eg-transition(enter='fadeIn' leave='fadeOut')
               li(v-if='step >= 11') FCW systems should be considered by the assessment programmes (Papers 1-3)
       eg-transition(enter='slideInRight' leave='slideOutLeft')
         div(v-if='step >= 12')
           counterfactualSVG.itemLogo
           p.itemText Analyse the impact of driver models in counterfactual simulations
           ul
-            eg-transition(enter='bounceInUp' leave='bounceOutLeft')
+            eg-transition(enter='fadeIn' leave='fadeOut')
               li(v-if='step >= 13') Safety benefit evaluation highly-depends on the driver model
 </template>
 <script>

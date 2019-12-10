@@ -6,7 +6,7 @@
           div.factors.center
               Paper1FactorsSVG
           div.ex-protocol
-              eg-transition(enter="bounceInRight" leave="bounceOutRight")
+              eg-transition(enter="fadeIn" leave="fadeOut")
                   p(v-if='step>4') Fractional factorial design: #[span.red.bold 128] trials to #[span.blue.bold 32] trials
               Paper1TrialOrderSVG
 </template>
@@ -220,18 +220,20 @@ export default {
 */
     function getTrialOrderAnimation() {
       var tl = gsap.timeline();
-      tl.from("#trialOrder>*", {
-        duration: 0.1,
-        stagger: 0.05,
-        x: "-=100",
+      tl.from("#trialOrder", {
+        duration: 0.5,
         autoAlpha: 0
       });
-      tl.from("#trialLegend>*", {
-        duration: 0.5,
-        y: "+=100",
-        autoAlpha: 0,
-        stagger: 0.1
-      });
+      tl.from(
+        "#trialLegend>*",
+        {
+          duration: 0.5,
+          y: "+=100",
+          autoAlpha: 0,
+          stagger: 0.1
+        },
+        "<"
+      );
       return tl;
     }
 
@@ -245,8 +247,9 @@ export default {
       .addLabel("step3")
       .add(moveSVGTimeline())
       .addLabel("step4")
+      .addLabel("step5")
       .add(getTrialOrderAnimation())
-      .addLabel("step5");
+      .addLabel("step6");
   }
 };
 </script>

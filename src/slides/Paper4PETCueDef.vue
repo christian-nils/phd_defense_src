@@ -2,16 +2,16 @@
     div.full-width.full-height
         h3 Crossing scenario: #[strong Post-encroachment time]
         h4.center #[strong.green No] need of #[strong.green braking]
-        PETCueDefSVG.center
+        Paper4PETCueDefSVG.center
 </template>
 
 <script>
-import PETCueDefSVG from "@/assets/images_src/PETCueDefinition.svg";
+import Paper4PETCueDefSVG from "@/assets/images_src/paper4PETCueDefinition.svg";
 import { gsap } from "gsap";
 export default {
   name: "PETCueDef",
   components: {
-    PETCueDefSVG
+    Paper4PETCueDefSVG
   },
   props: {
     step: {

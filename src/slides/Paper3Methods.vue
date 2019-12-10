@@ -1,8 +1,8 @@
 <template lang="pug">
  .full-width.full-height.flex-container.flex-column
         .flex-centered.flex-container.flex-row.title
-            CyclistLogoSVG.itemLogo   
-            h3.itemText Paper #[span.blue 3]     
+            CyclistLogoSVG.itemLogo
+            h3.itemText Paper #[span.blue 3]
         Paper3MethodsSVG
 </template>
 
@@ -50,8 +50,10 @@ export default {
 
     this.$options.timeline
       .addLabel("step1")
+      .from("#trialOrder", { duration: 0.5, autoAlpha: 0 })
+      .addLabel("step2")
       .from("#discomfort", { duration: 0.5, autoAlpha: 0 })
-      .addLabel("step2");
+      .addLabel("step3");
   }
 };
 </script>

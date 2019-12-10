@@ -2,9 +2,9 @@
     div.full-height.full-width
         h3 Modelling framework
         center.full-height
-          eg-transition(enter='bounceInUp' leave='bounceOutDown')
+          eg-transition(enter='fadeIn' leave='fadeOut')
             p(v-if="step >= 2") Based on the concept of neuronal #[span.blue evidence accumulation]
-          eg-transition(enter='bounceInUp' leave='bounceOutDown')
+          eg-transition(enter='fadeIn' leave='fadeOut')
             p(v-if="step >= 3") Predicts an #[span.blue intermittent driver control]
           Paper4ModellingFrameworkSVG
 </template>
