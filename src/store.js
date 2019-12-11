@@ -356,6 +356,17 @@ export default new Vuex.Store({
         steps: 5
       },
       {
+        name: "AppendixPaper2BrakingProfiles",
+        menuCategory: "Appendices",
+        menuName: "Paper 2 braking profiles",
+        path: "/appendix-paper-2-braking-profiles",
+        enterNext: "slideInUp",
+        leaveNext: "slideOutUp",
+        enterPrev: "slideInDown",
+        leavePrev: "slideOutDown",
+        steps: 1
+      },
+      {
         name: "AppendixPaper3Results2",
         menuCategory: "Appendices",
         menuName: "Paper 3 results 2",

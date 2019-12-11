@@ -11,12 +11,12 @@ export default {
   components: {
     SidebarMenu
   },
+  props: {},
   data() {
     return {
       menu: []
     };
   },
-  props: {},
   computed: {
     ...mapState({
       availableSlides: "slides"
