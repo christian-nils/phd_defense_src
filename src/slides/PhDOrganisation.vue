@@ -6,20 +6,20 @@
           h3 Objectives
           eg-transition(enter='bounceInRight' leave='bounceOutRight')
             div(v-if='step >= 7')
-              DriverAnalysesSVG.itemLogo 
-              p.itemText <span>Investigate</span> and <span>describe</span> driver behaviour
+              DriverAnalysesSVG.itemLogo
+              p.itemText Investigate and describe driver behaviour
           eg-transition(enter='bounceInRight' leave='bounceOutRight')
             div(v-if='step >= 8')
               DriverModelSVG.itemLogo
-              p.itemText Devise <span>driver models</span>
+              p.itemText Devise driver models
           eg-transition(enter='bounceInRight' leave='bounceOutRight')
             div(v-if='step >= 9')
               euroNCAPKnowledgeSVG.itemLogo
-              p.itemText Provide <span>new knowledge</span> that can be used by <span>assessment programmes</span>
+              p.itemText Provide new knowledge that can be used by assessment programmes
           eg-transition(enter='bounceInRight' leave='bounceOutRight')
             div(v-if='step >= 10')
               counterfactualSVG.itemLogo
-              p.itemText Analyse the <span>impact of driver models</span> in <span>counterfactual</span> simulations
+              p.itemText Analyse the impact of driver models in counterfactual simulations
 </template>
 
 <script>
@@ -190,7 +190,7 @@ export default {
       tl.to("#PhDOrganisation", {
         x: 0,
         y: 0,
-        scale: 0.55,
+        scale: 0.45,
         duration: 1
       });
       tl.from(".objectives", { duration: 1, x: "+=1000", autoAlpha: 0 }, "<");
@@ -255,8 +255,8 @@ export default {
   position: absolute;
   color: rgb(185, 228, 198);
   top: 30%;
-  left: 35%;
-  width: 63%;
+  left: 10%;
+  width: 90%;
 }
 
 .objectives li {
@@ -268,12 +268,8 @@ export default {
 
 .objectives > h3 {
   text-align: left;
-  margin-left: 400px;
+  margin-left: 40%;
   color: rgb(97, 170, 119);
-}
-
-.objectives span {
-  color: whitesmoke;
 }
 
 .objectives > div {
@@ -288,5 +284,7 @@ export default {
 .itemText {
   display: inline-block;
   margin: 0;
+  color: whitesmoke;
+  font-size: 1.5em;
 }
 </style>

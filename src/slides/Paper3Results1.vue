@@ -1,6 +1,6 @@
 <template lang="pug">
  .full-width.full-height-with-margin.center
-        Paper3Results1SVG 
+        Paper3Results1SVG
 </template>
 
 <script>
@@ -57,27 +57,34 @@ export default {
       tl.addLabel("end");
       return tl;
     }
+
+    function getModelsTimeline() {
+      var tl = gsap.timeline({ paused: true });
+      tl.addLabel("start");
+      tl.to(["#SIMPts", "#TTPts", "#SIMSTPts"], {
+        duration: 0.5,
+        autoAlpha: 0
+      });
+      tl.from("#models", { duration: 0.5, autoAlpha: 0 }, "<");
+      tl.to("#observations > .label", { duration: 0.5, autoAlpha: 0 }, "<");
+      tl.addLabel("end");
+      return tl;
+    }
     var SIMPtsTimeline = getPointsTimeline("SIMPts");
     var TTPtsTimeline = getPointsTimeline("TTPts");
     var SIMSTPtsTimeline = getPointsTimeline("SIMSTPts");
+    var modelsTimeline = getModelsTimeline();
 
     this.$options.timeline = gsap.timeline({ paused: true });
     this.$options.timeline
       .addLabel("step1")
       .add(SIMPtsTimeline.tweenFromTo("start", "end").timeScale(2))
+      .add(TTPtsTimeline.tweenFromTo("start", "end").timeScale(2), "<")
       .addLabel("step2")
-      .add(TTPtsTimeline.tweenFromTo("start", "end").timeScale(2))
-      .addLabel("step3")
       .add(SIMSTPtsTimeline.tweenFromTo("start", "end"))
-      .addLabel("step4")
-      .from("#modelledData", {
-        duration: 0.5,
-        transformOrigin: "center",
-        y: "+=100",
-        autoAlpha: 0,
-        stagger: 0.05
-      })
-      .addLabel("step5");
+      .addLabel("step3")
+      .add(modelsTimeline.tweenFromTo("start", "end"))
+      .addLabel("step4");
   }
 };
 </script>

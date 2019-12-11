@@ -3,10 +3,10 @@
     Paper2Results1SVG
     .absolute
       eg-transition(enter="bounceInLeft" leave=null)
-        div(v-if=' step>6 ').flex-container.flex-column
+        div(v-if=' step>5 ').flex-container.flex-column
           p.center CBNA-#[span.yellow 50]
           Paper2CBNAFactorsSVG.center
-          p.center #[span.yellow AEB] activation before 0.7 to 0.95s
+          p.center #[span.yellow AEB] activation before 0.7 to 0.95 s
 </template>
 
 <script>
@@ -139,16 +139,20 @@ export default {
     this.$options.timeline
       .addLabel("step1")
       .add(simulatorPts.tweenFromTo("start", "end").timeScale(1.5))
+      .from("#legend > .SIM", { duration: 0.5, autoAlpha: 0 }, "<")
       .addLabel("step2")
       .add(testTrackPts.tweenFromTo("start", "end").timeScale(1.5))
+      .from("#legend > .TT", { duration: 0.5, autoAlpha: 0 }, "<")
       .addLabel("step3")
       .add(extraSimulatorPts.tweenFromTo("start", "end"))
+      .from("#legend > .SIMST", { duration: 0.5, autoAlpha: 0 }, "<")
       .addLabel("step4")
       .add(modelTL.tweenFromTo("start", "end"))
+      .from("#legend > .model", { duration: 0.5, autoAlpha: 0 }, "<")
       .addLabel("step5")
-      .add(getEuroNCAPLabelTimeline())
-      .addLabel("step6")
       .add(getMoveSVGTimeline())
+      .addLabel("step6")
+      .add(getEuroNCAPLabelTimeline())
       .addLabel("step7");
   }
 };

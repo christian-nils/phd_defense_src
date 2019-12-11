@@ -9,6 +9,7 @@ export default new Vuex.Store({
     slides: [
       {
         name: "FrontPage",
+        menuCategory: "Introduction",
         menuName: "Front Page",
         path: "/",
         enter: "fadeIn",
@@ -17,6 +18,7 @@ export default new Vuex.Store({
       },
       {
         name: "CrashAnim",
+        menuCategory: "Introduction",
         menuName: "Animation crash",
         path: "/crash-animation",
         enter: "fadeIn",
@@ -25,6 +27,7 @@ export default new Vuex.Store({
       },
       {
         name: "Title",
+        menuCategory: "Introduction",
         menuName: "Title",
         path: "/title",
         enter: "fadeIn",
@@ -33,6 +36,7 @@ export default new Vuex.Store({
       },
       {
         name: "SafetySystems",
+        menuCategory: "Introduction",
         menuName: "Safety systems",
         path: "/safety-systems",
         enter: "fadeIn",
@@ -41,6 +45,7 @@ export default new Vuex.Store({
       },
       {
         name: "PhDOrganisation",
+        menuCategory: "Introduction",
         menuName: "Ph.D. organisation",
         path: "/phd-organisation",
         enter: "fadeIn",
@@ -49,7 +54,8 @@ export default new Vuex.Store({
       },
       {
         name: "IntroPapers",
-        menuName: "Introduction Papers",
+        menuCategory: "Introduction",
+        menuName: "Papers",
         path: "/papers",
         enterNext: "fadeIn",
         enterPrev: "slideInLeft",
@@ -59,8 +65,9 @@ export default new Vuex.Store({
       },
       {
         name: "Paper1",
-        menuName: "Paper 1",
-        path: "/paper-1",
+        menuCategory: "Paper 1",
+        menuName: "Experimental protocol",
+        path: "/paper-1-experimental-protocol",
         enterNext: "slideInRight",
         leaveNext: "slideOutUp",
         enterPrev: "slideInDown",
@@ -69,8 +76,9 @@ export default new Vuex.Store({
       },
       {
         name: "Paper1Video",
-        menuName: "Paper 1 video",
-        path: "/paper-1-video",
+        menuCategory: "Paper 1",
+        menuName: "Data collection",
+        path: "/paper-1-data-collection",
         enterNext: "slideInUp",
         leaveNext: "slideOutUp",
         enterPrev: "slideInDown",
@@ -78,17 +86,19 @@ export default new Vuex.Store({
       },
       {
         name: "Paper1Metrics",
-        menuName: "Paper 1 metrics",
-        path: "/paper-1-metrics",
+        menuCategory: "Paper 1",
+        menuName: "Analyses",
+        path: "/paper-1-analyses",
         enterNext: "slideInUp",
         leaveNext: "slideOutUp",
         enterPrev: "slideInDown",
         leavePrev: "slideOutDown",
-        steps: 8
+        steps: 5
       },
       {
         name: "Paper1Results1",
-        menuName: "Paper 1 results part 1",
+        menuCategory: "Paper 1",
+        menuName: "Results I",
         path: "/paper-1-results-1",
         enterNext: "slideInUp",
         leaveNext: "slideOutUp",
@@ -98,17 +108,19 @@ export default new Vuex.Store({
       },
       {
         name: "Paper1Results2",
-        menuName: "Paper 1 results part 2",
+        menuCategory: "Paper 1",
+        menuName: "Results II",
         path: "/paper-1-results-2",
         enterNext: "slideInUp",
         leaveNext: "slideOutUp",
         enterPrev: "slideInDown",
         leavePrev: "slideOutDown",
-        steps: 5
+        steps: 2
       },
       {
         name: "Paper1Results3",
-        menuName: "Paper 1 results Euro NCAP",
+        menuCategory: "Paper 1",
+        menuName: "Results Euro NCAP",
         path: "/paper-1-results-euro-ncap",
         enterNext: "slideInUp",
         leaveNext: "slideOutLeft",
@@ -118,8 +130,9 @@ export default new Vuex.Store({
       },
       {
         name: "Paper2-4",
-        menuName: "Papers 2-4",
-        path: "/paper-2-4",
+        menuCategory: "Paper 2-4",
+        menuName: "Experimental protocol",
+        path: "/paper-2-4-experimental-protocol",
         enterNext: "slideInRight",
         leaveNext: "slideOutUp",
         enterPrev: "slideInDown",
@@ -128,8 +141,9 @@ export default new Vuex.Store({
       },
       {
         name: "Paper2-4DataCollection1",
-        menuName: "Data collection 1",
-        path: "/data-collection-1",
+        menuCategory: "Paper 2-4",
+        menuName: "Data collection I",
+        path: "/paper-2-4-data-collection-1",
         enterNext: "slideInUp",
         leaveNext: "slideOutUp",
         enterPrev: "slideInDown",
@@ -138,8 +152,9 @@ export default new Vuex.Store({
       },
       {
         name: "Paper2-4DataCollection2",
-        menuName: "Data collection 2",
-        path: "/data-collection-2",
+        menuCategory: "Paper 2-4",
+        menuName: "Data collection II",
+        path: "/paper-2-4-data-collection-2",
         enterNext: "slideInUp",
         leaveNext: "slideOutUp",
         enterPrev: "slideInDown",
@@ -148,8 +163,9 @@ export default new Vuex.Store({
       },
       {
         name: "Paper2Methods",
-        menuName: "Paper 2 methods",
-        path: "/paper-2-methods",
+        menuCategory: "Paper 2",
+        menuName: "Analyses",
+        path: "/paper-2-analyses",
         enterNext: "slideInUp",
         leaveNext: "slideOutUp",
         enterPrev: "slideInDown",
@@ -158,7 +174,8 @@ export default new Vuex.Store({
       },
       {
         name: "Paper2Results",
-        menuName: "Paper 2 results",
+        menuCategory: "Paper 2",
+        menuName: "Results",
         path: "/paper-2-results",
         enterNext: "slideInUp",
         leaveNext: "slideOutLeft",
@@ -168,28 +185,31 @@ export default new Vuex.Store({
       },
       {
         name: "Paper3Methods",
-        menuName: "Paper 3 methods",
-        path: "/paper-3-methods",
+        menuCategory: "Paper 3",
+        menuName: "Analyses",
+        path: "/paper-3-analyses",
         enterNext: "slideInRight",
         leaveNext: "slideOutUp",
         enterPrev: "slideInDown",
         leavePrev: "slideOutRight",
-        steps: 3
+        steps: 2
       },
       {
         name: "Paper3Results1",
-        menuName: "Paper 3 results 1",
+        menuCategory: "Paper 3",
+        menuName: "Results I",
         path: "/paper-3-results-1",
         enterNext: "slideInUp",
         leaveNext: "slideOutUp",
         enterPrev: "slideInDown",
         leavePrev: "slideOutDown",
-        steps: 5
+        steps: 4
       },
       {
         name: "Paper3Results3",
-        menuName: "Paper 3 results 3",
-        path: "/paper-3-results-3",
+        menuCategory: "Paper 3",
+        menuName: "Results II",
+        path: "/paper-3-results-2",
         enterNext: "slideInUp",
         leaveNext: "slideOutLeft",
         enterPrev: "slideInLeft",
@@ -198,8 +218,9 @@ export default new Vuex.Store({
       },
       {
         name: "Paper4Methods",
-        menuName: "Paper 4 methods",
-        path: "/paper-4-methods",
+        menuCategory: "Paper 4",
+        menuName: "Analyses",
+        path: "/paper-4-analyses",
         enterNext: "slideInRight",
         leaveNext: "slideOutUp",
         enterPrev: "slideInDown",
@@ -208,7 +229,8 @@ export default new Vuex.Store({
       },
       {
         name: "Paper4ModellingFramework",
-        menuName: "Paper 4 modelling framework",
+        menuCategory: "Paper 4",
+        menuName: "Modelling framework",
         path: "/paper-4-modelling-framework",
         enterNext: "slideInUp",
         leaveNext: "slideOutUp",
@@ -218,7 +240,8 @@ export default new Vuex.Store({
       },
       {
         name: "Paper4Looming",
-        menuName: "Paper 4 traditional looming",
+        menuCategory: "Paper 4",
+        menuName: "Traditional looming definition",
         path: "/paper-4-traditional-looming",
         steps: 4,
         enterNext: "slideInUp",
@@ -228,7 +251,8 @@ export default new Vuex.Store({
       },
       {
         name: "Paper4LoomingCueDef",
-        menuName: "Paper 4 longitudinal looming",
+        menuCategory: "Paper 4",
+        menuName: "Longitudinal looming definition",
         path: "/paper-4-looming-def",
         steps: 2,
         enterNext: "slideInUp",
@@ -238,7 +262,8 @@ export default new Vuex.Store({
       },
       {
         name: "Paper4PETCueDef",
-        menuName: "Paper 4 PET definition",
+        menuCategory: "Paper 4",
+        menuName: "PETproj definition",
         path: "/Paper-4-PET-def",
         steps: 2,
         enterNext: "slideInUp",
@@ -248,7 +273,8 @@ export default new Vuex.Store({
       },
       {
         name: "Paper4DriverModel",
-        menuName: "Paper 4 driver model",
+        menuCategory: "Paper 4",
+        menuName: "Driver model",
         path: "/paper-4-driver-model",
         steps: 5,
         enterNext: "slideInUp",
@@ -258,7 +284,8 @@ export default new Vuex.Store({
       },
       {
         name: "Paper4DriverModelExample",
-        menuName: "Paper 4 driver model example",
+        menuCategory: "Paper 4",
+        menuName: "Driver model example",
         path: "/paper-4-driver-model-example",
         steps: 2,
         enterNext: "slideInUp",
@@ -268,8 +295,9 @@ export default new Vuex.Store({
       },
       {
         name: "Paper5",
-        menuName: "Paper 5",
-        path: "/paper-5",
+        menuCategory: "Paper 5",
+        menuName: "Analyses",
+        path: "/paper-5-analyses",
         steps: 3,
         enterNext: "slideInRight",
         leaveNext: "slideOutUp",
@@ -278,7 +306,8 @@ export default new Vuex.Store({
       },
       {
         name: "Paper5Results",
-        menuName: "Paper 5 results",
+        menuCategory: "Paper 5",
+        menuName: "Results",
         path: "/paper-5-results",
         steps: 6,
         enterNext: "slideInUp",
@@ -306,7 +335,8 @@ export default new Vuex.Store({
       },
       {
         name: "AppendixPaper1Results1Full",
-        menuName: "Appendix Paper 1 full results 1",
+        menuCategory: "Appendices",
+        menuName: "Paper 1 full results 1",
         path: "/appendix-paper-1-results-1",
         enterNext: "slideInUp",
         leaveNext: "slideOutUp",
@@ -315,8 +345,20 @@ export default new Vuex.Store({
         steps: 5
       },
       {
+        name: "AppendixPaper1Results2",
+        menuCategory: "Appendices",
+        menuName: "Paper 1 results 2",
+        path: "/appendix-paper-1-results-2",
+        enterNext: "slideInUp",
+        leaveNext: "slideOutUp",
+        enterPrev: "slideInDown",
+        leavePrev: "slideOutDown",
+        steps: 5
+      },
+      {
         name: "AppendixPaper3Results2",
-        menuName: "Appendix Paper 3 Results 2",
+        menuCategory: "Appendices",
+        menuName: "Paper 3 results 2",
         path: "/appendix-paper-3-results-2",
         enterNext: "slideInUp",
         leaveNext: "slideOutUp",
@@ -326,7 +368,8 @@ export default new Vuex.Store({
       },
       {
         name: "AppendixPaper5DriverModels",
-        menuName: "Appendix Paper 5 driver models",
+        menuCategory: "Appendices",
+        menuName: "Paper 5 driver models",
         path: "/appendix-paper-5-driver-models",
         steps: 1,
         enterNext: "slideInUp",
@@ -336,9 +379,20 @@ export default new Vuex.Store({
       },
       {
         name: "AppendixPaper5Results",
-        menuName: "Appendix Paper 5 results",
+        menuCategory: "Appendices",
+        menuName: "Paper 5 results",
         path: "/appendix-paper-5-results",
         steps: 9,
+        enterNext: "slideInUp",
+        leaveNext: "slideOutLeft",
+        enterPrev: "slideInLeft",
+        leavePrev: "slideOutDown"
+      },
+      {
+        name: "AppendixGlanceBehaviour",
+        menuCategory: "Appendices",
+        menuName: "Other work: glance behaviour",
+        path: "/appendix-glance-behaviour",
         enterNext: "slideInUp",
         leaveNext: "slideOutLeft",
         enterPrev: "slideInLeft",

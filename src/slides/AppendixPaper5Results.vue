@@ -1,21 +1,17 @@
 <template lang="pug">
-    .full-width.full-height-with-margin
-        Paper1MethodsSVG
-        .full-width
-            eg-transition(enter="fadeIn" leave="fadeOut")
-                h4(v-if='step>2') Analysed metrics
-            ul
-                eg-transition(enter="fadeIn" leave="fadeOut")
-                    li(v-if='step>3') Brake onset response time (#[span.strong bRT])
-                eg-transition(enter="fadeIn" leave="fadeOut")
-                    li(v-if='step>4') Car's time-to-arrival (#[span.strong TTA_BO]) and pedestrian's time-to-arrival (#[span.strong pTTA_BO]) at brake onset
+    .full-width.full-height.flex-container.center
+        Paper5ResultsSVG
 </template>
 
 <script>
-import Paper1MethodsSVG from "../assets/images_src/paper1Methods.svg";
+import Paper5ResultsSVG from "../assets/images_src/paper5Results.svg";
+import RearEndLogoSVG from "../assets/images_src/rearEndLogo.svg";
+
 import { gsap } from "gsap";
+
 export default {
-  components: { Paper1MethodsSVG },
+  name: "Paper1",
+  components: { Paper5ResultsSVG, RearEndLogoSVG },
   props: {
     step: {
       type: Number,
@@ -24,11 +20,11 @@ export default {
   },
   watch: {
     step: function(val) {
+      if (this.$options.tweenFromTo !== undefined) {
+        this.$options.tweenFromTo.kill();
+      }
       switch (this.$root.direction) {
         case "next":
-          if (this.$options.tweenFromTo !== undefined) {
-            this.$options.tweenFromTo.kill();
-          }
           gsap.set(this.$options.timeline, { timeScale: 1 });
           this.$options.tweenFromTo = this.$options.timeline.tweenFromTo(
             "step" + (val - 1),
@@ -36,8 +32,6 @@ export default {
           );
           break;
         case "prev":
-          this.$options.tweenFromTo.kill();
-          console.log("pause");
           gsap.set(this.$options.timeline, { timeScale: 2.5 });
           this.$options.tweenFromTo = this.$options.timeline.tweenFromTo(
             this.$options.timeline.time(),
@@ -63,57 +57,76 @@ export default {
       });
     }
 
-    function activateCurve(id) {
-      var tl = gsap.timeline({ paused: true });
+    function activateCurve(id, ind) {
+      var tl = gsap.timeline();
       tl.addLabel("start");
-      tl.to(id + ">*", {
-        duration: 0.5,
+      tl.to(curvePaths[ind], {
+        duration: 1,
         strokeDashoffset: 0,
         autoRound: false
       });
       tl.addLabel("end");
       return tl;
     }
-    var curvesTl = activateCurve("#curves");
 
     this.$options.timeline = gsap.timeline({ paused: true });
     this.$options.timeline
       .addLabel("step1")
-      .add(curvesTl.tweenFromTo("start", "end"))
-      .from("#curveLegend", { duration: 0.5, autoAlpha: 0 })
+      .to("svg", {
+        transformOrigin: "center",
+        scale: 3.5,
+        duration: 1,
+        x: "-=600",
+        y: "+=1000",
+        ease: "power2.inOut"
+      })
       .addLabel("step2")
-      .from("#pedestrian", { duration: 0.5, autoAlpha: 0, x: "-=10" })
+      .from("#impactSpeeds", { autoAlpha: 0, duration: 0.5 })
+      .from("#legend>*", {
+        stagger: 0.1,
+        duration: 0.5,
+        x: "+=100",
+        autoAlpha: 0
+      })
       .addLabel("step3")
-      .from("#labels>*", {
-        duration: 0.5,
-        y: "+=100",
-        stagger: 0.1,
-        autoAlpha: 0
-      })
+      .add(activateCurve("#curves", 5))
       .addLabel("step4")
-      .from("#metrics>*", {
-        duration: 0.5,
-        y: "-=100",
-        stagger: 0.1,
-        autoAlpha: 0
-      })
-      .addLabel("step5");
+      .add(activateCurve("#curves", 0))
+      .addLabel("step5")
+      .add(activateCurve("#curves", 1))
+      .addLabel("step6")
+      .add(activateCurve("#curves", 2))
+      .addLabel("step7")
+      .add(activateCurve("#curves", 3))
+      .addLabel("step8")
+      .add(activateCurve("#curves", 4))
+      .addLabel("step9");
+    /*this.$options.timeline
+      .addLabel("step1")
+      .add(getISSTimeline())
+      .addLabel("step2")
+      .add(getDriverModelTimeline())
+      .addLabel("step3");*/
   }
 };
 </script>
 
 <style scoped>
-#paper1Methods {
-  height: 600px;
+.itemLogo {
+  vertical-align: middle;
+  height: 100px;
+  margin-right: 10px;
 }
-div {
-  color: whitesmoke;
+.itemText {
+  vertical-align: middle;
+  margin: 0;
 }
-.strong {
-  font-weight: bold;
+.title {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-h4 {
-  margin: 0.5em 0;
+#counterfactualFramework {
+  height: 600px;
 }
 </style>

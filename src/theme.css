@@ -368,10 +368,23 @@
   margin-bottom: auto;
 }
 /* Menu styling */
-/*.bm-menu {
-    background-image: url("./assets/png/escheresque_ste.png");
-    font-family: "Source Code Pro", Courier;
-  }*/
+.v-sidebar-menu {
+  background-color: transparent;
+}
+
+.vsm_expanded {
+  background-color: #2a2a2e;
+}
+
+.v-sidebar-menu .vsm--toggle-btn {
+  order: 1;
+  color: #777;
+  background-color: rgb(39, 39, 39);
+}
+
+.v-sidebar-menu .vsm--list {
+  order: 2;
+}
 
 .bm-item-list a {
   padding: 0.1em;

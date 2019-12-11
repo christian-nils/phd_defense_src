@@ -60,11 +60,6 @@ export default {
   }
 };
 </script>
-<style>
-.slide-Paper1Results3 {
-  background-color: white;
-}
-</style>
 <style scoped>
 div {
   color: whitesmoke;

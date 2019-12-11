@@ -1,6 +1,6 @@
 <template lang="pug">
 #app
-    Menu(type="Slide")
+    Menu
     Slideshow(
       :on-end-exit='onEndExit'
       :mouse-navigation='false'

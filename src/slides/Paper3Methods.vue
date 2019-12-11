@@ -50,10 +50,8 @@ export default {
 
     this.$options.timeline
       .addLabel("step1")
-      .from("#trialOrder", { duration: 0.5, autoAlpha: 0 })
-      .addLabel("step2")
-      .from("#discomfort", { duration: 0.5, autoAlpha: 0 })
-      .addLabel("step3");
+      .from("#paper3Methods", { duration: 0.5, autoAlpha: 0 })
+      .addLabel("step2");
   }
 };
 </script>
@@ -93,5 +91,10 @@ span.blue {
 
 span.bold {
   font-weight: bold;
+}
+
+#paper3Methods {
+  margin: auto;
+  width: 800px;
 }
 </style>

@@ -1,21 +1,13 @@
 <template lang="pug">
-    .full-width.full-height-with-margin
-        Paper1MethodsSVG
-        .full-width
-            eg-transition(enter="fadeIn" leave="fadeOut")
-                h4(v-if='step>2') Analysed metrics
-            ul
-                eg-transition(enter="fadeIn" leave="fadeOut")
-                    li(v-if='step>3') Brake onset response time (#[span.strong bRT])
-                eg-transition(enter="fadeIn" leave="fadeOut")
-                    li(v-if='step>4') Car's time-to-arrival (#[span.strong TTA_BO]) and pedestrian's time-to-arrival (#[span.strong pTTA_BO]) at brake onset
+    .full-width.full-height-with-margin.flex-centered.flex-container
+        Paper1ResultsReactionTimesSVG
 </template>
 
 <script>
-import Paper1MethodsSVG from "../assets/images_src/paper1Methods.svg";
+import Paper1ResultsReactionTimesSVG from "../assets/images_src/paper1ResultsReactionTimes.svg";
 import { gsap } from "gsap";
 export default {
-  components: { Paper1MethodsSVG },
+  components: { Paper1ResultsReactionTimesSVG },
   props: {
     step: {
       type: Number,
@@ -37,7 +29,6 @@ export default {
           break;
         case "prev":
           this.$options.tweenFromTo.kill();
-          console.log("pause");
           gsap.set(this.$options.timeline, { timeScale: 2.5 });
           this.$options.tweenFromTo = this.$options.timeline.tweenFromTo(
             this.$options.timeline.time(),
@@ -52,7 +43,12 @@ export default {
   mounted() {
     // Initialize curves
     var curveLength = [];
-    var curvePaths = document.getElementById("curves").childNodes;
+    var curveIDs = ["gRTCurves", "rRTCurves", "bRTCurves"];
+    var curvePaths = [];
+    for (let index = 0; index < curveIDs.length; index++) {
+      const curves = document.getElementById(curveIDs[index]).childNodes;
+      curvePaths.push(...curves); // "..." syntax is to "slice" the array
+    }
 
     for (let index = 0; index < curvePaths.length; index++) {
       curveLength[index] = curvePaths[index].getTotalLength();
@@ -74,46 +70,31 @@ export default {
       tl.addLabel("end");
       return tl;
     }
-    var curvesTl = activateCurve("#curves");
-
+    var gRTTimeline = activateCurve("#gRTCurves");
+    var rRTTimeline = activateCurve("#rRTCurves");
+    var bRTTimeline = activateCurve("#bRTCurves");
     this.$options.timeline = gsap.timeline({ paused: true });
     this.$options.timeline
       .addLabel("step1")
-      .add(curvesTl.tweenFromTo("start", "end"))
-      .from("#curveLegend", { duration: 0.5, autoAlpha: 0 })
+      .add(gRTTimeline.tweenFromTo("start", "end"))
       .addLabel("step2")
-      .from("#pedestrian", { duration: 0.5, autoAlpha: 0, x: "-=10" })
+      .add(gRTTimeline.tweenFromTo("end", "start"))
+      .add(rRTTimeline.tweenFromTo("start", "end"))
       .addLabel("step3")
-      .from("#labels>*", {
-        duration: 0.5,
-        y: "+=100",
-        stagger: 0.1,
-        autoAlpha: 0
-      })
+      .add(rRTTimeline.tweenFromTo("end", "start"))
+      .add(bRTTimeline.tweenFromTo("start", "end"))
       .addLabel("step4")
-      .from("#metrics>*", {
-        duration: 0.5,
-        y: "-=100",
-        stagger: 0.1,
-        autoAlpha: 0
-      })
+      .add(rRTTimeline.tweenFromTo("start", "end"))
+      .add(gRTTimeline.tweenFromTo("start", "end"))
       .addLabel("step5");
   }
 };
 </script>
-
 <style scoped>
-#paper1Methods {
-  height: 600px;
-}
 div {
   color: whitesmoke;
 }
 .strong {
   font-weight: bold;
-}
-
-h4 {
-  margin: 0.5em 0;
 }
 </style>

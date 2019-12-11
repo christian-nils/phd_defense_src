@@ -1,6 +1,6 @@
 <template lang="pug">
     div.full-width.full-height
-        h3 Crossing scenario: #[strong Longitudinal looming]
+        h3 Longitudinal looming (tau-1)
         h4.center Need of #[strong.red braking]
         loomingCueDefSVG
 </template>

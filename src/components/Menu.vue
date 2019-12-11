@@ -1,40 +1,22 @@
 <template lang="pug">
-#menu
-    component(:is="currentMenu")
-        router-link(v-for="slide in availableSlides" v-bind:to="slide.path" v-bind:key="slide.id")
-            span {{slide.menuName}}
+  SidebarMenu(:menu="menu", :collapsed="true", :disableHover="true", :showOneChild="true")
 </template>
 
 <script>
-import {
-  Slide,
-  Bubble,
-  Elastic,
-  FallDown,
-  Push,
-  PushRotate,
-  Reveal,
-  ScaleDown,
-  ScaleRotate,
-  Stack
-} from "vue-burger-menu";
+import { SidebarMenu } from "vue-sidebar-menu";
 import { mapState, mapMutations } from "vuex";
 
 export default {
-  name: "Menus",
+  name: "Menu",
   components: {
-    Slide,
-    Bubble,
-    Elastic,
-    FallDown,
-    Push,
-    PushRotate,
-    Reveal,
-    ScaleDown,
-    ScaleRotate,
-    Stack
+    SidebarMenu
   },
-  props: { type: { type: String, required: true, default: "Slide" } },
+  data() {
+    return {
+      menu: []
+    };
+  },
+  props: {},
   computed: {
     ...mapState({
       availableSlides: "slides"
@@ -45,10 +27,40 @@ export default {
   },
   watch: {
     currentSlideIndex: "updateUrl",
-
     $route: "updateSlides"
   },
+  created: function() {
+    const slides = this.availableSlides;
+    var menuCategories = [];
+    var menuTemplate = "";
 
+    // Create a list of the menu categories (the collapsible items)
+    for (let index = 0; index < slides.length; index++) {
+      const element = slides[index];
+      var ind;
+      if (element.menuCategory === undefined) {
+        menuCategories.push(element.menuName);
+        this.$data.menu.push({
+          href: { path: element.path },
+          title: element.menuName
+        });
+      } else {
+        if (menuCategories.indexOf(element.menuCategory) === -1) {
+          menuCategories.push(element.menuCategory);
+          this.$data.menu.push({
+            href: "",
+            title: element.menuCategory,
+            child: []
+          });
+        }
+        ind = menuCategories.indexOf(element.menuCategory);
+        this.$data.menu[ind].child.push({
+          href: { path: element.path },
+          title: element.menuName
+        });
+      }
+    }
+  },
   methods: {
     ...mapMutations({
       setCurrentIndex: "setCurrent"
@@ -76,8 +88,5 @@ export default {
 </script>
 
 <style lang="scss">
-#menu {
-  position: absolute;
-  z-index: 1;
-}
+@import "vue-sidebar-menu/src/scss/vue-sidebar-menu.scss";
 </style>

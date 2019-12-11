@@ -1,13 +1,13 @@
 <template lang="pug">
     .full-width.full-height-with-margin.flex-centered.flex-container
-        Paper1ResultsReactionTimesSVG
+        Paper1SimplifiedResultsReactionTimesSVG
 </template>
 
 <script>
-import Paper1ResultsReactionTimesSVG from "../assets/images_src/paper1ResultsReactionTimes.svg";
+import Paper1SimplifiedResultsReactionTimesSVG from "../assets/images_src/paper1SimplifiedResultsReactionTimes.svg";
 import { gsap } from "gsap";
 export default {
-  components: { Paper1ResultsReactionTimesSVG },
+  components: { Paper1SimplifiedResultsReactionTimesSVG },
   props: {
     step: {
       type: Number,
@@ -43,7 +43,7 @@ export default {
   mounted() {
     // Initialize curves
     var curveLength = [];
-    var curveIDs = ["gRTCurves", "rRTCurves", "bRTCurves"];
+    var curveIDs = ["bRTCurves"];
     var curvePaths = [];
     for (let index = 0; index < curveIDs.length; index++) {
       const curves = document.getElementById(curveIDs[index]).childNodes;
@@ -70,23 +70,12 @@ export default {
       tl.addLabel("end");
       return tl;
     }
-    var gRTTimeline = activateCurve("#gRTCurves");
-    var rRTTimeline = activateCurve("#rRTCurves");
     var bRTTimeline = activateCurve("#bRTCurves");
     this.$options.timeline = gsap.timeline({ paused: true });
     this.$options.timeline
       .addLabel("step1")
-      .add(gRTTimeline.tweenFromTo("start", "end"))
-      .addLabel("step2")
-      .add(gRTTimeline.tweenFromTo("end", "start"))
-      .add(rRTTimeline.tweenFromTo("start", "end"))
-      .addLabel("step3")
-      .add(rRTTimeline.tweenFromTo("end", "start"))
       .add(bRTTimeline.tweenFromTo("start", "end"))
-      .addLabel("step4")
-      .add(rRTTimeline.tweenFromTo("start", "end"))
-      .add(gRTTimeline.tweenFromTo("start", "end"))
-      .addLabel("step5");
+      .addLabel("step2");
   }
 };
 </script>

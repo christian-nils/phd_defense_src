@@ -1,6 +1,6 @@
 <template lang="pug">
     div.full-width.full-height
-        h3 Crossing scenario: #[strong Post-encroachment time]
+        h3 Projected post-encroachment time (PETproj)
         h4.center #[strong.green No] need of #[strong.green braking]
         Paper4PETCueDefSVG.center
 </template>

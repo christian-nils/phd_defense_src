@@ -82,7 +82,7 @@ export default {
       tl.to("#euroNCAP", { duration: 0.5, autoAlpha: 1 }).add(
         activateConnector(1, "<")
       );
-      tl.set("#euroNCAPScenarios > .content > *", { autoAlpha: 0 });
+      /*tl.set("#euroNCAPScenarios > .content > *", { autoAlpha: 0 });
       tl.to("#euroNCAPScenarios", { duration: 0.5, autoAlpha: 1 });
       tl.fromTo(
         "#euroNCAPScenarios > .content > *",
@@ -94,7 +94,7 @@ export default {
           stagger: 0.25
         }
       );
-      tl.add(activateConnector(2, "<"));
+      tl.add(activateConnector(2, "<"));*/
       tl.fromTo(
         "#euroNCAPFactors >  .factor",
         { y: -100 },
