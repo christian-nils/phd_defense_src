@@ -49,14 +49,19 @@ export default {
     step: function(val) {
       switch (this.$root.direction) {
         case "next":
+          if (this.$options.tweenFromTo !== undefined) {
+            this.$options.tweenFromTo.kill();
+          }
           gsap.set(this.$options.timeline, { timeScale: 1 });
-          this.$options.timeline.pause();
-          this.$options.timeline.tweenFromTo("step" + (val - 1), "step" + val);
+          this.$options.tweenFromTo = this.$options.timeline.tweenFromTo(
+            "step" + (val - 1),
+            "step" + val
+          );
           break;
         case "prev":
+          this.$options.tweenFromTo.kill();
           gsap.set(this.$options.timeline, { timeScale: 2.5 });
-          this.$options.timeline.pause();
-          this.$options.timeline.tweenFromTo(
+          this.$options.tweenFromTo = this.$options.timeline.tweenFromTo(
             this.$options.timeline.time(),
             "step" + val
           );
@@ -83,9 +88,10 @@ export default {
       );
     }
     function getAssessmentTimeline() {
-      var tl = gsap.timeline();
+      var tl = gsap.timeline({ paused: true });
       /* Set initial state of elements */
       /* Groups */
+      tl.addLabel("start");
       tl.set("#ISSDriverModel", { opacity: 1 });
       tl.set(".cog", { scaleX: 0, scaleY: 0, transformOrigin: "center" });
       /* Connectors */
@@ -115,10 +121,12 @@ export default {
         scaleY: 1,
         ease: "back.out(1.7)"
       });
+      tl.addLabel("end");
       return tl;
     }
     function getDriverAnalysesTimeline() {
-      var tl = gsap.timeline();
+      var tl = gsap.timeline({ paused: true });
+      tl.addLabel("start");
       tl.to("#driverAnalyses", { duration: 0.5, scaleX: 1, scaleY: 1 });
       activateConnector(tl, 1, null);
       activateConnector(tl, 2, "<");
@@ -129,12 +137,12 @@ export default {
         scaleY: 1,
         ease: "back.out(1.7)"
       });
-
+      tl.addLabel("end");
       return tl;
     }
     function getDriverModelTimeline() {
-      var tl = gsap.timeline();
-
+      var tl = gsap.timeline({ paused: true });
+      tl.addLabel("start");
       tl.set("#fullDriver", { opacity: 0 });
 
       tl.to("#driverRight", {
@@ -168,19 +176,22 @@ export default {
       });
 
       activateConnector(tl, 3, "-=1");
-
+      tl.addLabel("end");
       return tl;
     }
 
     function getCounterfactualTimeline() {
-      var tl = gsap.timeline();
+      var tl = gsap.timeline({ paused: true });
+      tl.addLabel("start");
       activateConnector(tl, 5, "<");
       activateConnector(tl, 6, null);
+      tl.addLabel("end");
       return tl;
     }
 
     function getDisplayObjectivesTimeline() {
-      var tl = gsap.timeline();
+      var tl = gsap.timeline({ paused: true });
+      tl.addLabel("start");
       tl.to("#brain", {
         opacity: 1,
         duration: 1,
@@ -194,34 +205,48 @@ export default {
         duration: 1
       });
       tl.from(".objectives", { duration: 1, x: "+=1000", autoAlpha: 0 }, "<");
+      tl.addLabel("end");
       return tl;
     }
     function getShakyTimeline(el) {
-      var tl = gsap.timeline();
+      var tl = gsap.timeline({ paused: true });
+      tl.addLabel("start");
       tl.to(el, { duration: 0.05, x: "+=1" });
       tl.to(el, { duration: 0.05, x: "-=2", yoyo: true, repeat: 5 });
+      tl.addLabel("end");
       return tl;
     }
     this.$options.timeline = gsap.timeline({ paused: true });
     this.$options.timeline
       .addLabel("step1")
-      .add(getAssessmentTimeline())
+      .add(getAssessmentTimeline().tweenFromTo("start", "end"))
       .addLabel("step2")
-      .add(getDriverAnalysesTimeline())
+      .add(getDriverAnalysesTimeline().tweenFromTo("start", "end"))
       .addLabel("step3")
-      .add(getDriverModelTimeline())
+      .add(getDriverModelTimeline().tweenFromTo("start", "end"))
       .addLabel("step4")
-      .add(getCounterfactualTimeline())
+      .add(getCounterfactualTimeline().tweenFromTo("start", "end"))
       .addLabel("step5")
-      .add(getDisplayObjectivesTimeline())
+      .add(getDisplayObjectivesTimeline().tweenFromTo("start", "end"))
       .addLabel("step6")
-      .add(getShakyTimeline(["#driverAnalyses"]))
+      .add(getShakyTimeline(["#driverAnalyses"]).tweenFromTo("start", "end"))
       .addLabel("step7")
-      .add(getShakyTimeline(["#driverModel"]))
+      .add(getShakyTimeline(["#driverModel"]).tweenFromTo("start", "end"))
       .addLabel("step8")
-      .add(getShakyTimeline(["#driverAnalyses", "#ISS", "#euroNCAP"]))
+      .add(
+        getShakyTimeline(["#driverAnalyses", "#ISS", "#euroNCAP"]).tweenFromTo(
+          "start",
+          "end"
+        )
+      )
       .addLabel("step9")
-      .add(getShakyTimeline(["#driverModel", "#counterfactual", "#ISS"]))
+      .add(
+        getShakyTimeline([
+          "#driverModel",
+          "#counterfactual",
+          "#ISS"
+        ]).tweenFromTo("start", "end")
+      )
       .addLabel("step10");
 
     this.$options.timeline.eventCallback("onReverseComplete", this.hideSVG);

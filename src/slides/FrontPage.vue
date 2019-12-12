@@ -1,7 +1,6 @@
 <template lang="pug">
-div(style={width: "60%"})
-  .center
-    QRCodeSVG.full-height
+  .center.full-height-with-margin.full-width.flex-container.flex-column
+    QRCodeSVG(id="QRcode")
     a(href="https://research.chalmers.se/publication/514013/file/514013_Fulltext.pdf") shorturl.at/gILY3
 </template>
 <script>
@@ -19,13 +18,14 @@ h4.title {
   font-size: 1.8em;
   margin-bottom: 0em;
 }
-
-h4.sub-title {
-  margin-top: 0;
-  color: rgb(165, 165, 165);
+#QRcode {
+  width: 50%;
 }
-
 a {
-  color: rgb(165, 165, 165);
+  margin-top: 100px;
+  color: whitesmoke;
+}
+.flex-container > * {
+  margin: auto;
 }
 </style>
