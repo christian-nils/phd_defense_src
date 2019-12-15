@@ -56,7 +56,7 @@ export default {
         ind = menuCategories.indexOf(element.menuCategory);
         this.$data.menu[ind].child.push({
           href: { path: element.path },
-          title: element.menuName
+          title: element.menuName + " (s." + (index + 1) + ")"
         });
       }
     }

@@ -388,6 +388,17 @@ export default new Vuex.Store({
         steps: 3
       },
       {
+        name: "AppendixPaper4DriverModelApp",
+        menuCategory: "Appendices",
+        menuName: "Paper 4 driver model app",
+        path: "/appendix-paper-4-driver-model-app",
+        steps: 1,
+        enterNext: "slideInUp",
+        leaveNext: "slideOutUp",
+        enterPrev: "slideInDown",
+        leavePrev: "slideOutDown"
+      },
+      {
         name: "AppendixPaper5DriverModels",
         menuCategory: "Appendices",
         menuName: "Paper 5 driver models",
