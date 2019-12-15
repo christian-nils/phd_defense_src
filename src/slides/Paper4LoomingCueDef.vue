@@ -1,8 +1,13 @@
-<template lang="pug">
-    div.full-width.full-height
-        h3 Longitudinal looming (tau-1)
-        h4.center Need of #[strong.red braking]
-        loomingCueDefSVG
+<template>
+  <div class="full-width full-height">
+    <h3>
+      Longitudinal looming (<span v-katex:auto>
+        \(\tau^{-1} = \frac{\dot{\gamma}}{\gamma}\) </span
+      >)
+    </h3>
+    <h4 class="center">Need of <strong class="red">braking</strong></h4>
+    <loomingCueDefSVG />
+  </div>
 </template>
 
 <script>

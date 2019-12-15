@@ -5,6 +5,11 @@ import Eagle, { Options, CodeBlock } from "eagle.js";
 import "animate.css";
 import hljs from "highlight.js";
 
+import VueKatex from "vue-katex";
+import "katex/dist/katex.min.css";
+
+Vue.use(VueKatex);
+
 import router from "@/router";
 import store from "@/store";
 

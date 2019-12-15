@@ -1,15 +1,23 @@
 <template lang="pug">
-  .center.full-height-with-margin.full-width.flex-container.flex-column
-    QRCodeSVG(id="QRcode")
-    a(href="https://research.chalmers.se/publication/514013/file/514013_Fulltext.pdf") shorturl.at/gILY3
+  .center.full-height-with-margin.full-width.flex-container.flex-row
+    div.flex-container.flex-column
+      h3 Link to the slides
+      QRCodeSlidesSVG(class="QRcode")
+      a(href="http://shorturl.at/ltuUX") shorturl.at/ltuUX
+    div.flex-container.flex-column
+      h3 Link to the thesis
+      QRCodeThesisSVG(class="QRcode")
+      a(href="https://research.chalmers.se/publication/514013/file/514013_Fulltext.pdf") shorturl.at/gILY3
 </template>
 <script>
-import QRCodeSVG from "../assets/images_src/qr-code.svg";
+import QRCodeThesisSVG from "../assets/images_src/qrcode_thesis.svg";
+import QRCodeSlidesSVG from "../assets/images_src/qrcode_slides.svg";
 import { gsap } from "gsap";
 
 export default {
   components: {
-    QRCodeSVG
+    QRCodeThesisSVG,
+    QRCodeSlidesSVG
   }
 };
 </script>
@@ -18,11 +26,12 @@ h4.title {
   font-size: 1.8em;
   margin-bottom: 0em;
 }
-#QRcode {
-  width: 50%;
+.QRcode {
+  width: 100%;
 }
 a {
-  margin-top: 100px;
+  margin-top: 50px !important;
+  font-size: larger;
   color: whitesmoke;
 }
 .flex-container > * {

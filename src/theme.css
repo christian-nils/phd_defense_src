@@ -425,3 +425,7 @@
 .eg-slide-footer > .right-part {
   text-align: right;
 }
+
+.mathdefault {
+  text-transform: initial !important;
+}

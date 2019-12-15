@@ -1,9 +1,15 @@
-<template lang="pug">
-   div.full-width.full-height
-        h3  Car-following scenario: #[strong Looming]
-        div.flex-container.flex-row
-            loomingSVG.flex-item-row
-            brakeSVG.flex-item-row
+<template>
+  <div class="full-width full-height">
+    <h3>
+      Car-following scenario: <strong>Looming</strong> (<span v-katex:auto>
+        \(\tau^{-1}\) </span
+      >)
+    </h3>
+    <div class="flex-container flex-row">
+      <loomingSVG class="flex-item-row" />
+      <brakeSVG class="flex-item-row" />
+    </div>
+  </div>
 </template>
 
 <script>

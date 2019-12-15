@@ -1,8 +1,16 @@
-<template lang="pug">
-    div.full-width.full-height
-        h3 Projected post-encroachment time (PETproj)
-        h4.center #[strong.green No] need of #[strong.green braking]
-        Paper4PETCueDefSVG.center
+<template>
+  <div class="full-width full-height">
+    <h3>
+      Projected post-encroachment time (<span v-katex:auto>
+        \(PET_{proj}\) </span
+      >)
+    </h3>
+    <h4 class="center">
+      <strong class="green">No</strong> need of
+      <strong class="green">braking</strong>
+    </h4>
+    <Paper4PETCueDefSVG class="center" />
+  </div>
 </template>
 
 <script>
