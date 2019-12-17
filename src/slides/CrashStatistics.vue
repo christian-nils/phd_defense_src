@@ -5,7 +5,7 @@
       eg-transition(enter="fadeIn" leave="fadeOut")
         p(v-if="step>2") #[span.red.strong 54%] are vulnerable road users
       eg-transition(enter="fadeIn" leave="fadeOut")
-        p(v-if="step>3") #[span.red.strong Crossing scenarios] are one of the most frequent types of crash
+        p(v-if="step>3") #[span.red.strong Crossing scenarios] are one of the most frequent type of crash
 </template>
 
 <script>

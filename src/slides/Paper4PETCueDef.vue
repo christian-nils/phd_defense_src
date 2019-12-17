@@ -1,8 +1,7 @@
 <template>
-  <div class="full-width full-height">
-    <h3>
-      Projected post-encroachment time (<span v-katex:auto>
-        \(PET_{proj}\) </span
+  <div class="full-width full-height flex-column flex-container">
+    <h3 style="font-size: larger;">
+      Projected post-encroachment time (<span v-katex:auto>\(PET_{proj}\)</span
       >)
     </h3>
     <h4 class="center">

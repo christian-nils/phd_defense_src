@@ -41,9 +41,9 @@ export default {
     }
   },
   mounted() {
-    function getBarTimeline() {
+    function getBarTimeline(id) {
       var tl = gsap.timeline();
-      tl.from("#bars > *", {
+      tl.from("#" + id + ">*", {
         transformOrigin: "center bottom",
         scaleY: 0,
         duration: 0.5,
@@ -55,8 +55,12 @@ export default {
     this.$options.timeline = gsap.timeline({ paused: true });
     this.$options.timeline
       .addLabel("step1")
-      .add(getBarTimeline())
-      .addLabel("step2");
+      .add(getBarTimeline("seiniger"))
+      .addLabel("step2")
+      .add(getBarTimeline("lubbe"))
+      .addLabel("step3")
+      .add(getBarTimeline("ourStudy"))
+      .addLabel("step4");
   }
 };
 </script>

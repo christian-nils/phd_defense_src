@@ -26,16 +26,6 @@ export default new Vuex.Store({
         slideNumber: false
       },
       {
-        name: "CrashStatistics",
-        menuCategory: "Introduction",
-        menuName: "Crash statistics",
-        path: "/crash-statistics",
-        enter: "fadeIn",
-        leave: "fadeOut",
-        slideNumber: false,
-        steps: 4
-      },
-      {
         name: "Title",
         menuCategory: "Introduction",
         menuName: "Title",
@@ -136,7 +126,7 @@ export default new Vuex.Store({
         leaveNext: "slideOutLeft",
         enterPrev: "slideInLeft",
         leavePrev: "slideOutDown",
-        steps: 2
+        steps: 4
       },
       {
         name: "Paper2-4",

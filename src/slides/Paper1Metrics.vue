@@ -1,14 +1,29 @@
-<template lang="pug">
-    .full-width.full-height-with-margin
-        Paper1MethodsSVG
-        .full-width
-            eg-transition(enter="fadeIn" leave="fadeOut")
-                h4(v-if='step>2') Analysed metrics
-            ul
-                eg-transition(enter="fadeIn" leave="fadeOut")
-                    li(v-if='step>3') Brake onset response time (#[span.strong bRT])
-                eg-transition(enter="fadeIn" leave="fadeOut")
-                    li(v-if='step>4') Car's time-to-arrival (#[span.strong TTA_BO]) and pedestrian's time-to-arrival (#[span.strong pTTA_BO]) at brake onset
+<template>
+  <div class="full-width full-height-with-margin">
+    <Paper1MethodsSVG />
+    <div class="full-width">
+      <eg-transition enter="fadeIn" leave="fadeOut">
+        <h4 v-if="step > 2">Analysed metrics</h4>
+      </eg-transition>
+      <ul>
+        <eg-transition enter="fadeIn" leave="fadeOut">
+          <li v-if="step > 3">
+            Brake onset response time (
+            <strong>bRT</strong>)
+          </li>
+        </eg-transition>
+        <eg-transition enter="fadeIn" leave="fadeOut">
+          <li v-if="step > 4">
+            Car's time-to-arrival (
+            <span v-katex:auto>\(TTA_{bo}\)</span>
+            ) and pedestrian's time-to-arrival (
+            <span v-katex:auto>\(pTTA_{bo}\)</span>
+            ) at brake onset
+          </li>
+        </eg-transition>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -37,7 +52,6 @@ export default {
           break;
         case "prev":
           this.$options.tweenFromTo.kill();
-          console.log("pause");
           gsap.set(this.$options.timeline, { timeScale: 2.5 });
           this.$options.tweenFromTo = this.$options.timeline.tweenFromTo(
             this.$options.timeline.time(),
