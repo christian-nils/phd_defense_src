@@ -11,7 +11,7 @@
     "animate.css": "^3.7.2",
     "core-js": "^3.4.8",
     "eagle.js": "git+https://github.com/christian-nils/eagle.js.git",
-    "gsap": "^3.0.2",
+    "gsap": "^3.6.0",
     "highlight.js": "^9.16.2",
     "katex": "^0.11.1",
     "mathjax": "^2.7.7",
